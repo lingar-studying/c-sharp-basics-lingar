@@ -15,14 +15,12 @@ namespace c_sharp_basics_lingar.inventory_module
         public int MyProperty { get; set; }
 
         //getter written as the field with capitalized Case
-        public long Id()
-        {
-            return id;
-        }
+        public long Id { get { return id; }set { this.id = value; } }
+
 
         public override string ToString() { 
         
-            return "Inventory of company - " + companyName + "id number = " + id;
+            return "Inventory of company - " + companyName + "id number = " + id + " Id = " + Id;
         }
 
 

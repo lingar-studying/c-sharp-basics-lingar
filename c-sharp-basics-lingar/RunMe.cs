@@ -15,7 +15,11 @@ namespace c_sharp_basics_lingar
             Console.WriteLine("Some OOP examples cames here");
             Inventory  inventory=new Inventory();
 
-           
+            Console.WriteLine("inventory = " + inventory);
+
+            inventory.Id = 100;
+            //task 1 - Demo proper encaplsulated inventory 
+            Console.WriteLine("inventory after change= " + inventory);
             //Console.WriteLine("id after change - " + inventory.id);//---> will generate an inaccessible error
 
 
