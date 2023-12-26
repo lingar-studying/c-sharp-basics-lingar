@@ -9,9 +9,12 @@ namespace c_sharp_basics_lingar.inventory_module
     public class Inventory
     {
         private long id;
-        private string companyName;
+        //String is equivalen to string, it's recommended to use string -
+        //https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#string-vs-systemstring
+        public string companyName = "NA";
+       
 
-        public string CompanyName { get; set; }
+
         public int MyProperty { get; set; }
 
         //getter written as the field with capitalized Case
