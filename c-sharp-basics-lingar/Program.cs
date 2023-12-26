@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using c_sharp_basics_lingar.draft;
+
 Console.WriteLine("By the help of God -" +
     "" +
     "Some C# basics");
@@ -8,3 +10,5 @@ Console.WriteLine("By the help of God -" +
  * 
  * 
  */
+Animal animal = new Animal();
+UnSafeCast.Main();
