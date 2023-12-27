@@ -13,5 +13,25 @@ namespace c_sharp_basics_lingar.inventory_module
         private string[] keepers;
 
         public bool LightOn { get { return lightOn; } set { lightOn = value; } }    
+
+        public void addGuards(string guard)
+        {
+            keepers = new string[] { guard };
+        }
+        //Method overloading 
+        public void addGuards(string[] guards)
+        {
+            keepers = guards;
+        }
+
+        public override string ToString()
+        {
+            string keepersString = "keepers= ";
+            for (int i = 0; i < keepers.Length; i++)
+            {
+                keepersString += keepers[i] + ",";
+            }
+            return base.ToString() +"| lightOn = "+ lightOn + "|" +keepersString;
+        }
     }
 }

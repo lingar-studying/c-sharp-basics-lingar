@@ -31,6 +31,21 @@ namespace c_sharp_basics_lingar
 
             Console.WriteLine("\nStrcture = {0}", structure);
 
+            Warehouse warehouse=new Warehouse();
+
+            string[] keepers = { "Avraham", "Izhak", "Yaakov" };
+            warehouse.LightOn = true;
+
+            warehouse.addGuards(keepers);
+
+            Console.WriteLine("\nwarehouse = " + warehouse);
+
+            warehouse.addGuards("David");
+
+            Console.WriteLine("\nwarehouse =" + warehouse);
+
+
+
 
 
 
