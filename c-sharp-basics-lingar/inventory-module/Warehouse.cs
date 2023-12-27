@@ -24,6 +24,12 @@ namespace c_sharp_basics_lingar.inventory_module
             keepers = guards;
         }
 
+
+        public override void  Clean()
+        {
+            Dirt = 20;
+        }
+
         public override string ToString()
         {
             string keepersString = "keepers= ";

@@ -48,12 +48,16 @@ namespace c_sharp_basics_lingar
 
             Console.WriteLine("\ntrying to add more then 100 in dirt:\nwarehouse =" + warehouse);
 
-            warehouse.Dirt = 20;
+            warehouse.Dirt = 65;
 
             Console.WriteLine("\nadding correct value \nwarehouse =" + warehouse);
 
+            structure.Clean();
+            Console.WriteLine("\n Cleaning the structre \nstrtucture =" + structure);
 
 
+            warehouse.Clean();
+            Console.WriteLine("\n Cleaning the warehouse \nwarehouse =" + warehouse);
 
 
 

@@ -26,7 +26,7 @@ namespace c_sharp_basics_lingar.inventory_module
         private string country, city;
 
         //must be between 0-100(include)
-        private int dirt;
+        private int dirt = 40;
 
 
         //Publics
@@ -66,6 +66,15 @@ namespace c_sharp_basics_lingar.inventory_module
         string nonModifier = "nonModifier default value";
 
         public string NonModifier { get { return nonModifier; } set { nonModifier = value; } }
+
+
+        //Methods
+        //overided method
+        //try to override it when you remove the virtual and see if it's compiled 
+        public virtual void Clean()
+        {
+            dirt = 0;
+        }
         public override string ToString()
         {
             //Console.WriteLine("Length = {0}, Height = {1}, Width = {2}, Volume = {3}",
