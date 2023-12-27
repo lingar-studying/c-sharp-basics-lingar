@@ -22,6 +22,8 @@ namespace c_sharp_basics_lingar
             Console.WriteLine("inventory after change= " + inventory);
             //Console.WriteLine("id after change - " + inventory.id);//---> will generate an inaccessible error
 
+            DemoAccessors.Demo();
+
 
 
 
