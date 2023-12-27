@@ -18,17 +18,38 @@ namespace c_sharp_basics_lingar.inventory_module
             this.l = l;
             this.h = h;
         }
+
+        //privates
         private long id;
 
         private int w, h, l;
         private string country, city;
 
+        //must be between 0-100(include)
+        private int dirt;
+
+
+        //Publics
         public string Country { get { return country; } set { country = value; } }
         public string City { get { return city; } set { city = value; } }
 
         public int W { get { return w; } set { w = value; } }
         public int H { get { return h; } set { h = value; } }
         public int L { get { return l; } set { l = value; } }
+
+        public int Dirt
+        {
+            get => dirt;
+            set
+            {
+                if (value >= 0 && value <= 100)
+                {
+
+                    dirt = value;
+
+                }
+            }
+        }
 
         public long Id { get { return id; } set { id = value; } }
 
@@ -52,7 +73,7 @@ namespace c_sharp_basics_lingar.inventory_module
             return "id = " + id + "| customized customizedAble = " + customizedAble
                 + "|fromAllProject = " + fromAllProject + "|fromThisProjectOrFromSubClass =" + fromThisProjectOrFromSubClass
                 + "|fromSubClassInThisFileOnly =" + fromSubClassInThisProjectOnly + "|nonModifier =" + nonModifier
-                + String.Format("| length = {0}| height = {1}| width = {2} | Country = {3}| City = {4}", l, h, w, country, city);
+                + String.Format("| length = {0}| height = {1}| width = {2} | Country = {3}| City = {4}| Dirt = {5}", l, h, w, country, city, dirt);
 
 
         }

@@ -42,7 +42,17 @@ namespace c_sharp_basics_lingar
 
             warehouse.addGuards("David");
 
-            Console.WriteLine("\nwarehouse =" + warehouse);
+            Console.WriteLine("\nwarehouse =" + warehouse);         
+
+            warehouse.Dirt = 120;
+
+            Console.WriteLine("\ntrying to add more then 100 in dirt:\nwarehouse =" + warehouse);
+
+            warehouse.Dirt = 20;
+
+            Console.WriteLine("\nadding correct value \nwarehouse =" + warehouse);
+
+
 
 
 
