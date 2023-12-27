@@ -24,6 +24,13 @@ namespace c_sharp_basics_lingar
 
             DemoAccessors.Demo();
 
+            Structure structure=new Structure(10,20,5);
+
+            structure.Country = "Israel";
+            structure.City = "Netanya";
+
+            Console.WriteLine("\nStrcture = {0}", structure);
+
 
 
 
