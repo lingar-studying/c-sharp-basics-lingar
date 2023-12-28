@@ -14,6 +14,7 @@ namespace c_sharp_basics_lingar.inventory_module
         //Arrays - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays
         //private Product[] = new Product[5];// what's wrong ? test youself
         private Product[] products = new Product[5];
+        public Product[] Products { get => products; set => products = value; }
 
 
         public bool LightOn { get { return lightOn; } set { lightOn = value; } }

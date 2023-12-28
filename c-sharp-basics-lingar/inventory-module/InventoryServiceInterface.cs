@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace c_sharp_basics_lingar.inventory_module
 {
-    public interface InvenotryServiceInterface
+    public interface InventoryServiceInterface
     {
-        public void TransferProducts(Warehouse from, Warehouse to, int productBarcode, int amount); 
+        public  void TransferProducts(Warehouse from, Warehouse to, int productBarcode, int amount); 
     }
 }
