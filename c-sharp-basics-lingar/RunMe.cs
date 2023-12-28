@@ -40,7 +40,7 @@ namespace c_sharp_basics_lingar
 
             Console.WriteLine("\nwarehouse = " + warehouse);
 
-            warehouse.addGuards("David");
+            warehouse.AddGuards("David");
 
             Console.WriteLine("\nwarehouse =" + warehouse);         
 
@@ -63,6 +63,8 @@ namespace c_sharp_basics_lingar
             warehouse.W = 20;
             warehouse.demoThis(10);
            // Console.WriteLine("\ndemo this:\n" + warehouse);
+
+            //Test warehouse products behavior
 
 
 

@@ -30,7 +30,7 @@ namespace c_sharp_basics_lingar.inventory_module
 
         public override string ToString()
         {
-            return string.Format("BarCode = {0}", BarCode);
+            return string.Format("BarCode = {0} |Quantity = {1}", BarCode, quantity);
         }
     }
 
