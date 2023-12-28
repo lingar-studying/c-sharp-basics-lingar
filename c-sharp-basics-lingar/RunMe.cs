@@ -57,8 +57,12 @@ namespace c_sharp_basics_lingar
 
 
             warehouse.Clean();
-            Console.WriteLine("\n Cleaning the warehouse \nwarehouse =" + warehouse);
+            Console.WriteLine("\n Cleaning the warehouse \nwarehouse =" + warehouse +"\n");
 
+            
+            warehouse.W = 20;
+            warehouse.demoThis(10);
+           // Console.WriteLine("\ndemo this:\n" + warehouse);
 
 
 

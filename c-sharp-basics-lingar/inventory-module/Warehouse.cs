@@ -30,6 +30,8 @@ namespace c_sharp_basics_lingar.inventory_module
             Dirt = 20;
         }
 
+      
+
         public override string ToString()
         {
             string keepersString = "keepers= ";

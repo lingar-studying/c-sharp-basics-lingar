@@ -75,6 +75,11 @@ namespace c_sharp_basics_lingar.inventory_module
         {
             dirt = 0;
         }
+
+        public void demoThis(int w)
+        {
+            Console.WriteLine("demo this - this object value = {0} | parmeter w = {1}", this.w, w);
+        }
         public override string ToString()
         {
             //Console.WriteLine("Length = {0}, Height = {1}, Width = {2}, Volume = {3}",
