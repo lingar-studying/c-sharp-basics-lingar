@@ -119,6 +119,39 @@ namespace c_sharp_basics_lingar
                 "Warehouse 1 (From) = \n" + warehouse1
                 + "\nWarhouse 2 (To) = \n" + warehouse2);
 
+            //demo upcast and downcase 
+            ClassRoom room = new ClassRoom();
+            Structure structure1 = netanyaInventoryService.upcast(room);
+            //structure1.classRoomDoSomething();//won't compile
+
+            //will compile but runtime error because it's not type of ClassRoom
+            //ClassRoom room2 = netanyaInventoryService.downcast(structure);
+            //room2.ClassRoomDoSomething();
+
+
+            //solution- check the object 
+            bool ok = structure is ClassRoom;
+            if (ok)//false
+            {
+                ClassRoom room2 = netanyaInventoryService.downcast(structure);
+
+            }
+
+            Structure structure2 = new ClassRoom();
+            if (structure2 is ClassRoom)//true
+            {
+                ClassRoom room2 = netanyaInventoryService.downcast(structure2);
+                room2.ClassRoomDoSomething();
+                Console.WriteLine("room2 type = " + room2.GetType().Name);
+
+                Console.WriteLine("structure1 type = " + structure1.GetType().Name);
+
+                ClassRoom room3 = netanyaInventoryService.downcast(structure1);
+
+
+
+            }
+
 
             //you can do more tests
 

@@ -81,5 +81,17 @@ namespace c_sharp_basics_lingar.inventory_module
 
 
         }
+
+        public Structure upcast(ClassRoom c)
+        {
+            Structure s = c;
+            return s;
+        }
+
+        public ClassRoom downcast(Structure s)
+        {
+            ClassRoom c = (ClassRoom)s;
+            return c;
+        }
     }
 }
