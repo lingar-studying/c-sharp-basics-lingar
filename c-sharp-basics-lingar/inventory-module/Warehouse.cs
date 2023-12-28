@@ -31,9 +31,12 @@ namespace c_sharp_basics_lingar.inventory_module
                     return;
                 }
             }
-            {
+            Console.WriteLine("All slots fulled - product "+ Barcode + " didn't added");
+        }
 
-            }
+        public void RemoveProduct(int index)
+        {
+            products[index] = null;
         }
 
         public void AddGuards(string guard)

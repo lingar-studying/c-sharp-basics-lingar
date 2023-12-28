@@ -65,12 +65,31 @@ namespace c_sharp_basics_lingar
             warehouse.demoThis(10);
             // Console.WriteLine("\ndemo this:\n" + warehouse);
 
+            //Product p1 = new Product(1111);
+            //Product p2 = new Product(2222);
+
+            warehouse.AddProduct(1111, 10);
+            warehouse.AddProduct(2222, 20);
+
+            warehouse.AddProduct(3333, 20);
+            warehouse.AddProduct(4444, 20);
+            warehouse.AddProduct(5555, 20);
+            warehouse.AddProduct(6666, 20);
+
+            Console.WriteLine("\nadding products: \n" + warehouse );
+
+            Console.WriteLine("\nproducts amount = " + Product.ProductDailyAmount);
+
+            warehouse.RemoveProduct(2);
+            warehouse.AddProduct(6666, 20);
+            Console.WriteLine("\nadding another product after removing one: \n" + warehouse);
+
             //Test warehouse products behavior
 
 
             //solution for question 3:
 
-            Solution3.TestSolution();
+            //Solution3.TestSolution();
 
 
 
