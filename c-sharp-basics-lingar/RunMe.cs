@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using c_sharp_basics_lingar.inventory_module;
+using c_sharp_basics_lingar.test_solution;
 namespace c_sharp_basics_lingar
 
 {
@@ -62,9 +63,15 @@ namespace c_sharp_basics_lingar
             
             warehouse.W = 20;
             warehouse.demoThis(10);
-           // Console.WriteLine("\ndemo this:\n" + warehouse);
+            // Console.WriteLine("\ndemo this:\n" + warehouse);
 
             //Test warehouse products behavior
+
+
+            //solution for question 3:
+
+            Solution3.TestSolution();
+
 
 
 
