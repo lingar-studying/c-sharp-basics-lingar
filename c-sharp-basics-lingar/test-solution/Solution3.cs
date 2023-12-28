@@ -46,8 +46,9 @@ namespace c_sharp_basics_lingar.test_solution
         {
             x = 1.1;
         }
-        public Second(int num, First first): base(num)
+        public Second(int num, First first) : base(num)//you can also assign directly to num, but this seems to be more efficient
         {
+            //this.num = num; //possible 
             x = 5.5;
             f = first;
         }
