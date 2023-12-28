@@ -19,8 +19,9 @@ namespace c_sharp_basics_lingar.inventory_module
             {
                 if(from.Products[i].BarCode == productBarcode)
                 {
+                    int tempQuantity = fromProducts[i].Quantity;
                     fromProducts[i].Quantity = Math.Max(fromProducts[i].Quantity - amount, 0);
-                    if(fromProducts[i].Quantity < amount) { amount = fromProducts[i].Quantity; }
+                    if(tempQuantity < amount) { amount = tempQuantity; }
                     found = true;
                     break;
                 }
@@ -35,7 +36,10 @@ namespace c_sharp_basics_lingar.inventory_module
             found = false;
             for (int i = 0; i < to.Products.Length; i++)
             {
-                if (to.Products[i].BarCode == productBarcode)
+                 
+                if (to.Products[i] == null) continue;
+
+                if ( to.Products[i].BarCode == productBarcode) 
                 {
                     toProducts[i].Quantity += amount;
                     found = true;
@@ -45,11 +49,26 @@ namespace c_sharp_basics_lingar.inventory_module
 
             if (!found)
             {
-                if(toProducts.Length >= 5)
+                bool full = true;
+                foreach (Product product in toProducts)
+                {
+                    if(product == null)
+                    {
+                        full = false;
+                    }
+                }
+
+                if (full)//wrong condition since you initialize it. You should check if we have no null. 
                 {
                     Console.WriteLine("to warehouse is full");
                     return;
                 }
+
+                //if(toProducts.Length >= 5)//wrong condition since you initialize it. You should check if we have no null. 
+                //{
+                //    Console.WriteLine("to warehouse is full");
+                //    return;
+                //}
                 to.AddProduct(productBarcode, amount);
             }
             else

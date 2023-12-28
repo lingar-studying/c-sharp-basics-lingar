@@ -32,62 +32,95 @@ namespace c_sharp_basics_lingar
 
             Console.WriteLine("\nStrcture = {0}", structure);
 
-            Warehouse warehouse=new Warehouse();
+            Warehouse warehouse1=new Warehouse();
 
             string[] keepers = { "Avraham", "Izhak", "Yaakov" };
-            warehouse.LightOn = true;
+            warehouse1.LightOn = true;
 
-            warehouse.addGuards(keepers);
+            warehouse1.addGuards(keepers);
 
-            Console.WriteLine("\nwarehouse = " + warehouse);
+            Console.WriteLine("\nwarehouse = " + warehouse1);
 
-            warehouse.AddGuards("David");
+            warehouse1.AddGuards("David");
 
-            Console.WriteLine("\nwarehouse =" + warehouse);         
+            Console.WriteLine("\nwarehouse =" + warehouse1);         
 
-            warehouse.Dirt = 120;
+            warehouse1.Dirt = 120;
 
-            Console.WriteLine("\ntrying to add more then 100 in dirt:\nwarehouse =" + warehouse);
+            Console.WriteLine("\ntrying to add more then 100 in dirt:\nwarehouse =" + warehouse1);
 
-            warehouse.Dirt = 65;
+            warehouse1.Dirt = 65;
 
-            Console.WriteLine("\nadding correct value \nwarehouse =" + warehouse);
+            Console.WriteLine("\nadding correct value \nwarehouse =" + warehouse1);
 
             structure.Clean();
             Console.WriteLine("\n Cleaning the structre \nstrtucture =" + structure);
 
 
-            warehouse.Clean();
-            Console.WriteLine("\n Cleaning the warehouse \nwarehouse =" + warehouse +"\n");
+            warehouse1.Clean();
+            Console.WriteLine("\n Cleaning the warehouse \nwarehouse =" + warehouse1 +"\n");
 
             
-            warehouse.W = 20;
-            warehouse.demoThis(10);
+            warehouse1.W = 20;
+            warehouse1.demoThis(10);
             // Console.WriteLine("\ndemo this:\n" + warehouse);
 
             //Product p1 = new Product(1111);
             //Product p2 = new Product(2222);
 
-            warehouse.AddProduct(1111, 10);
-            warehouse.AddProduct(2222, 20);
+            warehouse1.AddProduct(1111, 10);
+            warehouse1.AddProduct(2222, 20);
 
-            warehouse.AddProduct(3333, 20);
-            warehouse.AddProduct(4444, 20);
-            warehouse.AddProduct(5555, 20);
-            warehouse.AddProduct(6666, 20);
+            warehouse1.AddProduct(3333, 20);
+            warehouse1.AddProduct(4444, 20);
+            warehouse1.AddProduct(5555, 20);
+            warehouse1.AddProduct(6666, 20);
 
-            Console.WriteLine("\nadding products: \n" + warehouse );
+            Console.WriteLine("\nadding products: \n" + warehouse1 );
 
             Console.WriteLine("\nproducts amount = " + Product.ProductDailyAmount);
 
-            warehouse.RemoveProduct(2);
-            warehouse.AddProduct(6666, 20);
-            Console.WriteLine("\nadding another product after removing one: \n" + warehouse);
+            warehouse1.RemoveProduct(2);
+            warehouse1.AddProduct(6666, 20);
+            Console.WriteLine("\nadding another product after removing one: \n" + warehouse1);
 
-            //Test warehouse products behavior
+            Warehouse warehouse2 = new Warehouse();
+
 
 
             //solution for question 3:
+
+            //test 1 - regular case which both exist 
+            warehouse2.AddProduct(2222, 40);
+
+            NetanyaInventoryService netanyaInventoryService = new NetanyaInventoryService();
+            Console.WriteLine("\n\n\n");
+            netanyaInventoryService.TransferProducts(warehouse1, warehouse2, 2222, 7);//after this should be on w1 13 and on w2 47 (Barcode 2222 ) 
+            Console.WriteLine("\nTest 1 - result:\n" +
+                "Warehouse 1 (From) = \n" + warehouse1
+                + "\nWarhouse 2 (To) = \n" + warehouse2);
+
+
+            //test 2 - not exist on the warehouse1 
+            netanyaInventoryService.TransferProducts(warehouse1, warehouse2, 6547, 7);
+            Console.WriteLine("\ntest2 result:\n" +
+                 "Warehouse 1 (From) = \n" + warehouse1
+                 + "\nWarhouse 2 (To) = \n" + warehouse2);
+
+            //test 3 - not exist on the warehouse2 
+            netanyaInventoryService.TransferProducts(warehouse1, warehouse2, 5555, 17);
+            Console.WriteLine("\ntest3 result:\n" +
+                 "Warehouse 1 (From) = \n" + warehouse1
+                 + "\nWarhouse 2 (To) = \n" + warehouse2);
+
+            //test 4 - amount is more then the exist amounts
+            netanyaInventoryService.TransferProducts(warehouse1, warehouse2, 1111, 17);
+            Console.WriteLine("\ntest4 result:\n" +
+                "Warehouse 1 (From) = \n" + warehouse1
+                + "\nWarhouse 2 (To) = \n" + warehouse2);
+
+
+            //you can do more tests
 
             //Solution3.TestSolution();
 

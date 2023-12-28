@@ -61,10 +61,14 @@ namespace c_sharp_basics_lingar.inventory_module
         public override string ToString()
         {
             string keepersString = "keepers= ";
-            for (int i = 0; i < keepers.Length; i++)
+            if (keepers != null)
             {
-                keepersString += keepers[i] + ",";
+                for (int i = 0; i < keepers.Length; i++)
+                {
+                    keepersString += keepers[i] + ",";
+                }
             }
+            
             return base.ToString() + "| lightOn = " + lightOn + "|" + keepersString
                 + "\nproducts = " + string.Join("| ", (object[]) products); //another way to print the array https://www.bytehide.com/blog/convert-array-to-string-csharp
         }
