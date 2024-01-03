@@ -38,8 +38,6 @@ namespace c_sharp_basics_lingar.test_summer_81.pickup_store_Q1
         {
 
             //if name, kind, size equals - true
-            //other.name = "ddd"; //intersting that it's working
-            Console.WriteLine("heyy/1 "  + other);
             if (this.name.Equals( other.name) && this.kind.Equals(other.kind) && this.size == other.Size)  return true;
 
             return false;
