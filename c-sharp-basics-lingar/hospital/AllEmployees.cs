@@ -8,9 +8,25 @@ namespace c_sharp_basics_lingar.hospital
 {
     public class AllEmployees
     {
-        private Employee[] arr = new Employee[200];
+        private Employee[] arr;
         private int current;
+        private const int MAX_EMPLOYEES = 200;
 
+        public void setArr(Employee[] arr)
+        {
+            if (arr.Length > MAX_EMPLOYEES)
+            {
+                throw new Exception("Hospital can't contain more employees than " + MAX_EMPLOYEES);
+            }
+            this.arr = arr;
+        }
+        public AllEmployees(Employee[] arr, int current)
+        {
+
+            //this.arr = arr;
+            setArr(arr);
+            this.current = current;
+        }
         public int NumSupervisors()
         {
             int count = 0;
@@ -22,21 +38,21 @@ namespace c_sharp_basics_lingar.hospital
                     count++;
                 }
             }
-            return 0;
+            return count;
         }
-        public Nurse? GetNewNurse()
+        public Nurse? GetNewNurse(string type)
         {
             Nurse newNurse = null;
 
             for (int i = arr.Length-1; i >=0; i--)
             {
-                Console.WriteLine("running... " + i);
-                if (arr[i] is Nurse && (newNurse == null || newNurse.GetNum() < arr[i].GetNum()))
+                Console.WriteLine("running... " + i + "!" );
+                if (arr[i] is Nurse && ((Nurse) arr[i]).Type.Equals(type) &&  (newNurse == null || newNurse.GetNum() < arr[i].GetNum()))
                 {                 
                     newNurse = (Nurse)arr[i];
                 }
             }
-            return GetNewNurse == null ? null : newNurse;
+            return newNurse == null ? null : newNurse;
 
         }
     }

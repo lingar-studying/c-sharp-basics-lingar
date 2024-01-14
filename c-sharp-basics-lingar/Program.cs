@@ -15,4 +15,7 @@ Console.WriteLine("By the help of God -" +
 //task 2 - insert Main method from RunMe. 
 //RunMe.Main();
 //TestPickupStore.runMe();
-TestHospital.Test1();
+//TestHospital.Test1();
+TestHospital.Test2();
+
+

@@ -11,6 +11,7 @@ namespace c_sharp_basics_lingar.hospital
         private Employee[] arr;
         private int current;
 
+
         public Supervisor(string name, string specialization, 
             Employee[] arr, int current): base(name, specialization)
         {
