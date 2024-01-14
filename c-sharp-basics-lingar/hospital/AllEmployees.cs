@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace c_sharp_basics_lingar.hospital
 {
-    public class AllEmployees
+    public class AllEmployees 
     {
-        private Employee[] arr;
+        private Employee[] arr;//== new Employee[200] --> it's not efficient and also not blocking the option to replcae the value to bigger array. 
         private int current;
         private const int MAX_EMPLOYEES = 200;
 
@@ -16,6 +16,7 @@ namespace c_sharp_basics_lingar.hospital
         {
             if (arr.Length > MAX_EMPLOYEES)
             {
+                //You don't need to do this, it's only for test. You can do return instead. 
                 throw new Exception("Hospital can't contain more employees than " + MAX_EMPLOYEES);
             }
             this.arr = arr;
@@ -32,7 +33,7 @@ namespace c_sharp_basics_lingar.hospital
             int count = 0;
             for(int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine("running... " + i);
+                //Console.WriteLine("running... " + i);
                 if(arr[i] is Supervisor)
                 {
                     count++;
@@ -46,7 +47,7 @@ namespace c_sharp_basics_lingar.hospital
 
             for (int i = arr.Length-1; i >=0; i--)
             {
-                Console.WriteLine("running... " + i + "!" );
+                //Console.WriteLine("running... " + i + "!" );
                 if (arr[i] is Nurse && ((Nurse) arr[i]).Type.Equals(type) &&  (newNurse == null || newNurse.GetNum() < arr[i].GetNum()))
                 {                 
                     newNurse = (Nurse)arr[i];
