@@ -10,7 +10,7 @@ namespace c_sharp_basics_lingar.hospital
     {
         private int num = serialNumber++;
         private string name;
-        private static int serialNumber = 0;
+        private static int serialNumber = 1;
 
         public Employee(string name)
         {
