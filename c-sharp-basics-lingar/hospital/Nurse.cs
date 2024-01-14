@@ -14,5 +14,6 @@ namespace c_sharp_basics_lingar.hospital
         {
             this.type = type;
         }
+
     }
 }
