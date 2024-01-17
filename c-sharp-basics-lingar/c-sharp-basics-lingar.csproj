@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>c_sharp_basics_lingar</RootNamespace>
     <Nullable>enable</Nullable>
+	  <!-- <ImplicitUsings>enable</ImplicitUsings> ... won't work on old versions -->
 	  <!-- that defines the entry point -->
 	  <StartupObject>c_sharp_basics_lingar.Program</StartupObject>
   </PropertyGroup>
