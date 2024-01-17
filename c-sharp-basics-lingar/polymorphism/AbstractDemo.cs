@@ -8,11 +8,37 @@ namespace c_sharp_basics_lingar.polymorphism
 {
     public class AbstractDemo
     {
-        public static void demoAbstractClass()
+        public static void DemoAbstractClass()
         {
             //U cannot use it directly
             //complie error - "Cannot create an instance of the abstract class or interface 'interface' " 
             //AbstractClass1 a = new AbstractClass1();
+
+            //TODO - some combinations... 
+            AbstractClass1Implementation1 a = new AbstractClass1Implementation1();
+            a.AbstractMethod1();
+            AbstractImplementationHideThings b = new AbstractImplementationHideThings();
+            b.AbstractMethod1();
+
+            //polymophism:
+
+            AbstractClass1 c = new AbstractClass1Implementation1();
+            AbstractClass1 d = new AbstractImplementationHideThings();
+
+            AbstractClass1[] someDifferentTypesSameParent = new AbstractClass1[4];
+
+            someDifferentTypesSameParent[0] = a;
+            someDifferentTypesSameParent[1] = b;
+            someDifferentTypesSameParent[2] = c;
+            someDifferentTypesSameParent[3] = d;
+
+            Console.WriteLine("Running on the same array: ");
+            for (int i = 0; i < someDifferentTypesSameParent.Length; i++)
+            {
+                someDifferentTypesSameParent[i].AbstractMethod1();
+            }
+
+
 
         }
     }
@@ -57,7 +83,7 @@ namespace c_sharp_basics_lingar.polymorphism
         //U must use "override" key word for override things. 
         public override void AbstractMethod1()
         {
-
+            Console.WriteLine("AbstractClass1Implementation1.AbstractMethod1()");
         }
 
         public override int AbstractMethod2(string s)

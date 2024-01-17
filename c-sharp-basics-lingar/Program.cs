@@ -3,6 +3,7 @@ using c_sharp_basics_lingar.draft;
 using c_sharp_basics_lingar;
 using c_sharp_basics_lingar.test_summer_81.pickup_store_Q1;
 using c_sharp_basics_lingar.hospital;
+using c_sharp_basics_lingar.polymorphism;
 
 Console.WriteLine("By the help of God -" +
     "" +
@@ -16,6 +17,7 @@ Console.WriteLine("By the help of God -" +
 //RunMe.Main();
 //TestPickupStore.runMe();
 //TestHospital.Test1();
-TestHospital.Test2();
+//TestHospital.Test2();
+AbstractDemo.DemoAbstractClass();
 
 
