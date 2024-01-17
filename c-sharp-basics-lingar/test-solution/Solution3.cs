@@ -62,7 +62,9 @@ namespace c_sharp_basics_lingar.test_solution
         }
         public override string ToString()
         {
-            return base.ToString() + String.Format("Second = [x = {0} | f = {1}]", x, f != null? f : "null");
+            //return base.ToString() + String.Format("Second = [x = {0} | f = {1}]", x, f != null? f : "null");//won't work in older versions then 6
+       
+            return base.ToString() + String.Format("Second = [x = {0} | f = {1}]", x, f != null? f +"" : "null");
         }
 
     }
