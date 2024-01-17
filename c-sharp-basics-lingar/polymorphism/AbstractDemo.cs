@@ -37,6 +37,19 @@ namespace c_sharp_basics_lingar.polymorphism
             {
                 someDifferentTypesSameParent[i].AbstractMethod1();
             }
+            //demo hiding and override - guess the right answer 
+            AbstractImplementationHideThings concreteChild = new AbstractImplementationHideThings();
+            AbstractClass1 mixed = new AbstractImplementationHideThings();
+            Console.WriteLine("overriden vs hidden quiz: ");
+            Console.WriteLine(concreteChild.field1);//5 or 16 ? 
+            Console.WriteLine(mixed.field1);//5 or 16 ? 
+            Console.WriteLine(concreteChild.ConcreteNotVirtuaHiddenlMethod2());//255 or 19 ?
+            Console.WriteLine(mixed.ConcreteNotVirtuaHiddenlMethod2());//255 or 19 ?
+            
+
+            Console.WriteLine(concreteChild.ConcreteVirtualMethod1());//child or parent method will be invoked?
+            Console.WriteLine(mixed.ConcreteVirtualMethod1());//child or parent method will be invoked??
+
 
 
 
@@ -46,7 +59,7 @@ namespace c_sharp_basics_lingar.polymorphism
     //Combine of interface and sub-class utilities
     public abstract class AbstractClass1
     {
-        public int field1, field2;//will be exist on the child too.
+        public int field1 = 5, field2 = 10;//will be exist on the child too.
 
         //Compile error - "The modifier 'abstract' is not valid for this item"
         //U cannot implement (=define, write code) abstract method
@@ -64,11 +77,11 @@ namespace c_sharp_basics_lingar.polymorphism
         public virtual double ConcreteVirtualMethod1()
         {
             Console.WriteLine("ConcreteMethod1 - from abstract class");
-            return 0;
+            return 10;
         }
         public short ConcreteNotVirtualMethod1() { return 9; }
 
-        public byte ConcreteNotVirtualMethod2() {
+        public byte ConcreteNotVirtuaHiddenlMethod2() {
             //return 9222; //it's too much for byte - compile error
             return 255;//maximum bye
         }
@@ -129,7 +142,7 @@ namespace c_sharp_basics_lingar.polymorphism
         }
 
         //use the new : 
-        public new short ConcreteNotVirtualMethod2()
+        public new short ConcreteNotVirtuaHiddenlMethod2()
         {
 
             return 19;
