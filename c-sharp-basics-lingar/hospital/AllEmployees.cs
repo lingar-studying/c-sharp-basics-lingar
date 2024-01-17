@@ -53,7 +53,7 @@ namespace c_sharp_basics_lingar.hospital
                     newNurse = (Nurse)arr[i];
                 }
             }
-            return newNurse == null ? null : newNurse;
+            return newNurse;
 
         }
     }
