@@ -23,6 +23,12 @@ namespace c_sharp_basics_lingar.chess
     {
         private int column = 1;
         private int row = 1;
+        public Square() { }
+        public Square(int column, int row)
+        {
+            Column = column;
+            Row = row;
+        }
 
         public int Column
         {
@@ -51,6 +57,17 @@ namespace c_sharp_basics_lingar.chess
     }
     public class Board
     {
+        private Object[] pieces;
+
+        public Object[] Pieces { get=>pieces; set=>pieces = value; }
+
+        public Board()
+        {
+            
+
+
+
+        }
 
     }
 
@@ -59,16 +76,16 @@ namespace c_sharp_basics_lingar.chess
     {
         
         private string color;
-        private Square sqaure;
+        private Square square;
         // constractor
-        public Queen(string color)
+        public Queen(string color, Square square )
         {
             this.color = color;
-            this.sqaure = sqaure;
+            this.square = square;
         }
-        public void Move(Square sqaure)
+        public void Move(Square square)
         {
-            Console.WriteLine("The queen moved to square " + sqaure);
+            Console.WriteLine("The queen moved to square " + square);
         }
     }
 
@@ -105,20 +122,40 @@ namespace c_sharp_basics_lingar.chess
         }
     }
 
+    public class GameProcess
+    {
+        private Board board;
+        private Object[] pieces;
 
+        public GameProcess()
+        {
+            Queen queen = new Queen("black", new Square(4, 8));
+            Rook rook = new Rook("black", new Square(1, 8));
+            Bishop bishop = new Bishop("black", new Square(3, 8));
 
+            pieces = new Object[] { queen, rook, bishop };
 
+            board = new Board();
+            board.Pieces = pieces;
+        }
 
+        public void MoveSomePiece(Object piece, Square destination)
+        {
+            if(piece is Queen)
+            {
+                ((Queen)piece).Move(destination);
+            }
 
+            else if (piece is Rook)
+            {
+                ((Rook)piece).Move(destination);
+            }
 
-
-
-
-
-
-
-
-
-
+            if (piece is Bishop)
+            {
+                ((Rook)piece).Move(destination);
+            }
+        }
+    }
 
 }
