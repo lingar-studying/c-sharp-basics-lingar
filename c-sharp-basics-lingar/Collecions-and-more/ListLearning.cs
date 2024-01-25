@@ -19,7 +19,7 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             l.Add("Yossi");
             Console.WriteLine("l = " + l);
             l.ForEach(Console.WriteLine);
-            
+
 
             //You can do it with other objects too 
             List<Employee> employees = new List<Employee>();
@@ -38,11 +38,82 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             //linkedStrings.Fo
             //linkedStrings.AddAfter("a","b");
 
-            FromDocs();
+            //FromDocsLinkedList();
+
+            //Stack is like Havit, that you put things in Last In First Out way (LIFO) (You don't provided with other methods
+            //https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-8.0
+            Stack<string> stack = new Stack<string>();
+
+            stack.Push("a");
+            stack.Push("b");
+            stack.Push("c");
+            stack.Push("d");
+            Console.WriteLine(  "Lingar??");
+
+            foreach (var item in stack)
+            {
+                Console.WriteLine(item);
+            }
+            //Here we can get the item without remove it
+            string item1 = stack.Peek();
+
+            Console.WriteLine("item1 = (stack is still the same " + item1);
+
+            foreach (var item in stack)
+            {
+                Console.WriteLine(item);
+            }
+            item1 = stack.Pop();
+
+            Console.WriteLine("now I took the item1 = (stack will be missing one) " + item1);
+            foreach (var item in stack)
+            {
+                Console.WriteLine(item);
+            }
+
+            //Queue is first in first out FIFO
+            //https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-8.0
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("a");
+            queue.Enqueue("b");
+            queue.Enqueue("c");
+            queue.Enqueue("d");
+            Console.WriteLine("Queue");
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+            item1 = queue.Dequeue();
+            Console.WriteLine("This item get his queue - " + item1);
+            Console.WriteLine("Now Queue");
+
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+
+            //Dictionary is similar to Map on Java
+            //It's for finding element by specific item you provided. 
+            //It's also can be an object.
+            //https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-8.0
+            Dictionary<String, Employee> employeesList = new Dictionary<string, Employee>();
+
+            Employee employeeCeo = new Employee("Jack");
+            Employee employeeSecretery = new Employee("Rachel");
+            Employee employeeAssistant = new Employee("Dan");
+
+            employeesList.Add("ceo", employeeCeo);
+            employeesList.Add("secretary", employeeSecretery);
+
+            Console.WriteLine("get the item - similary to array :" + employeesList["secretary"]);
+
+            //TODO
+            //See how it's working with objects. 
+            //When we'll use each data structure
 
 
         }
-        public static void FromDocs()
+        public static void FromDocsLinkedList()
         {
             // Create the link list.
             string[] words =
