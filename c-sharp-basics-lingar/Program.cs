@@ -6,6 +6,7 @@ using c_sharp_basics_lingar.hospital;
 using c_sharp_basics_lingar.polymorphism;
 using System;
 using c_sharp_basics_lingar.test_solution;
+using c_sharp_basics_lingar.Collecions_and_more;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -30,7 +31,8 @@ namespace c_sharp_basics_lingar
             //TestPickupStore.runMe();
             //TestHospital.Test1();
             //TestHospital.Test2();
-            AbstractDemo.DemoAbstractClass();
+            //AbstractDemo.DemoAbstractClass();
+            ListLearning.DemoList();
 
         }
     }
