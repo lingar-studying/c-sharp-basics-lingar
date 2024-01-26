@@ -42,6 +42,8 @@ namespace c_sharp_basics_lingar
             // ListLearning.DemoList();
             // Driver.Main222();
             InheritanceImplementation.Demo();
+            InterfaceImplementation.Demo();
+            AbstractImplementation.Demo();
 
         }
     }
