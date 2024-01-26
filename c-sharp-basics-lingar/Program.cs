@@ -39,8 +39,9 @@ namespace c_sharp_basics_lingar
             //TestHospital.Test1();
             //TestHospital.Test2();
             //AbstractDemo.DemoAbstractClass();
-           // ListLearning.DemoList();
-           // Driver.Main222();
+            // ListLearning.DemoList();
+            // Driver.Main222();
+            InheritanceImplementation.Demo();
 
         }
     }

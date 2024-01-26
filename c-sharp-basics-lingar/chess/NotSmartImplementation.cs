@@ -24,7 +24,7 @@ namespace c_sharp_basics_lingar.chess
             }
         }
 
-       
+
 
 
         class Queen
@@ -115,14 +115,15 @@ namespace c_sharp_basics_lingar.chess
             }
         }
 
-    //    public void WeekDays(Numbers day)
-    //    {
+        //    public void WeekDays(Numbers day)
+        //    {
 
-    //    }
+        //    }
 
-    //}
-    //enum Numbers
-    //{
-    //    One, Two, Three, Four, Five, Six, Sevent
-    //}
+        //}
+        //enum Numbers
+        //{
+        //    One, Two, Three, Four, Five, Six, Sevent
+        //}
+    }
 }
