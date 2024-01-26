@@ -7,7 +7,7 @@ using System.Text;
 namespace c_sharp_basics_lingar.Collecions_and_more
 {
     public class ListLearning
-    {
+    {//check
 
         public static void DemoList()
         {
