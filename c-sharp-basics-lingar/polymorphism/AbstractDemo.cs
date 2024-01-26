@@ -38,8 +38,12 @@ namespace c_sharp_basics_lingar.polymorphism
                 someDifferentTypesSameParent[i].AbstractMethod1();
             }
             //demo hiding and override - guess the right answer 
+
+
             AbstractImplementationHideThings concreteChild = new AbstractImplementationHideThings();
             AbstractClass1 mixed = new AbstractImplementationHideThings();
+
+
             Console.WriteLine("overriden vs hidden quiz: ");
             Console.WriteLine(concreteChild.field1);//5 or 16 ? 
             Console.WriteLine(mixed.field1);//5 or 16 ? 
@@ -104,6 +108,10 @@ namespace c_sharp_basics_lingar.polymorphism
             //throw new NotImplementedException();
             return 3;
         }
+        
+        
+
+
     }
 
     public class AbstractImplementationHideThings : AbstractClass1

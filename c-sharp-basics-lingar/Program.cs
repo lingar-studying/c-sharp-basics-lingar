@@ -6,6 +6,8 @@ using c_sharp_basics_lingar.hospital;
 using c_sharp_basics_lingar.polymorphism;
 using System;
 using c_sharp_basics_lingar.test_solution;
+using c_sharp_basics_lingar.chess;
+
 using c_sharp_basics_lingar.Collecions_and_more;
 using c_sharp_basics_lingar.test_solution;
 namespace c_sharp_basics_lingar
@@ -20,8 +22,12 @@ namespace c_sharp_basics_lingar
             Console.WriteLine("By the help of God -" +
             "" +
             "Some C# basics");
-            Second s = new Second();
-            Console.WriteLine("second = " + s);
+
+            NotSmartImplementation.Demo();
+            NotSmartImplementation n = new NotSmartImplementation();
+            //n.Demo();
+            //Second s = new Second();
+            //Console.WriteLine("second = " + s);
             /*
              * We'll do here some tasks for demo and learn the basics of C# and OOP
              * 

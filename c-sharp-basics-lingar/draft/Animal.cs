@@ -30,6 +30,13 @@ namespace c_sharp_basics_lingar.draft
 
         static void Test(Animal a)
         {
+
+            ImplementedInterface1 i = new ImplementedInterface1();
+            Interface1 i1 = new ImplementedInterface1();
+
+            i.do2();
+            ((ImplementedInterface1)i1).do2();
+
             // System.InvalidCastException at run time
             // Unable to cast object of type 'Mammal' to type 'Reptile'
             if(a.GetType() == typeof (Reptile))
@@ -41,6 +48,24 @@ namespace c_sharp_basics_lingar.draft
                     Reptile r = (Reptile)a;
 
             }
+        }
+    }
+
+    public interface Interface1
+    {
+        public void do1();
+    }
+
+    public class ImplementedInterface1 : Interface1
+    {
+        public void  do1()
+        {
+
+        }
+
+        public void do2()
+        {
+
         }
     }
 }
