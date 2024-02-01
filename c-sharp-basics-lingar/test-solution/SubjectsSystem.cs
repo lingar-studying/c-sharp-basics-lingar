@@ -9,9 +9,9 @@ namespace c_sharp_basics_lingar.test_solution
     {
         public static void TestSubjectSystem()
         {
-            Subject algorithmicA = new Subject(3, 8, 70);
-            Subject algorithmicB = new Subject(3, 9, 75);
-            Subject oop = new Subject(4, 4, 60);
+            Subject algorithmicA = new Subject("algorithmicA", 3, 8, 70);
+            Subject algorithmicB = new Subject("algorithmicB", 3, 9, 75);
+            Subject oop = new Subject("oop", 4, 4, 60);
 
             Console.WriteLine(algorithmicA.GetPoints(3, 75));//0
             Console.WriteLine(algorithmicA.GetPoints(4, 75));//3
@@ -23,10 +23,7 @@ namespace c_sharp_basics_lingar.test_solution
 
             algorithmicB.GetPoints(4, 90);//0
 
-            algorithmicA.SetActualGrade(80);
-            algorithmicA.SetHandedAssignments(5);
-            oop.SetHandedAssignments(5);
-            oop.SetActualGrade(65);
+         
 
             Result(new Subject[] { algorithmicA, oop });//7
 
@@ -37,7 +34,21 @@ namespace c_sharp_basics_lingar.test_solution
             int sum = 0;
             for(int i=0; i<subjects.Length; i++)
             {
-                sum += subjects[i].GetPoints(subjects[0].GetHandedAssingments(), subjects[0].GetActualGrade());
+                //sum += subjects[i].GetPoints(subjects[0].GetHandedAssingments(), subjects[0].GetActualGrade());
+
+                Console.WriteLine("Insert Handed assignments for " + subjects[i].GetName());
+                String input = Console.ReadLine();
+                int hadnedAssignments = Convert.ToInt32(input);
+
+                Console.WriteLine("Insert Grade for " + subjects[i].GetName());
+
+                input = Console.ReadLine();
+                int grade = Convert.ToInt32(input);
+
+               
+
+                sum += subjects[i].GetPoints(hadnedAssignments, grade);
+
             }
             Console.WriteLine("Result = " + sum);
         }
@@ -47,14 +58,14 @@ namespace c_sharp_basics_lingar.test_solution
 
     public class Subject
     {
+
+        private string name;
         private int creditPoints;
         private int assignments;
         private int passingGrade;
 
 
-        private int handedAssignments;
-        private int actualGrade;
-
+        public string GetName() { return name; }
 
         public int GetCreditPoints() { return creditPoints; }
 
@@ -62,28 +73,13 @@ namespace c_sharp_basics_lingar.test_solution
 
         public int GetPassingGrade() { return passingGrade; }
 
-        public int GetHandedAssingments()
-        {
-            return handedAssignments;
-        }
+       
 
-        public int GetActualGrade()
-        {
-            return actualGrade;
-        }
+      
 
-        public void SetHandedAssignments(int handedAssignments)
+        public Subject(string name, int creditPoints, int assignments, int passingGrade)
         {
-            this.handedAssignments = handedAssignments;
-        }
-
-        public void SetActualGrade(int actualGrade)
-        {
-            this.actualGrade = actualGrade;
-        }
-
-        public Subject(int creditPoints, int assignments, int passingGrade)
-        {
+            this.name = name;
             this.creditPoints = creditPoints;
             this.assignments = assignments;
             this.passingGrade = passingGrade;
