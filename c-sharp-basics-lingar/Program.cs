@@ -1,15 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using c_sharp_basics_lingar.draft;
-using c_sharp_basics_lingar;
-using c_sharp_basics_lingar.test_summer_81.pickup_store_Q1;
-using c_sharp_basics_lingar.hospital;
-using c_sharp_basics_lingar.polymorphism;
 using System;
 using c_sharp_basics_lingar.test_solution;
 using c_sharp_basics_lingar.chess;
-
-using c_sharp_basics_lingar.Collecions_and_more;
-using c_sharp_basics_lingar.test_solution;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -41,9 +33,10 @@ namespace c_sharp_basics_lingar
             //AbstractDemo.DemoAbstractClass();
             // ListLearning.DemoList();
             // Driver.Main222();
-            InheritanceImplementation.Demo();
-            InterfaceImplementation.Demo();
-            AbstractImplementation.Demo();
+            //InheritanceImplementation.Demo();
+            //InterfaceImplementation.Demo();
+            //AbstractImplementation.Demo();
+            SubjectsSystem.TestSubjectSystem();
 
         }
     }
