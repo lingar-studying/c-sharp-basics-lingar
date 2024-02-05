@@ -2,6 +2,7 @@
 using System;
 using c_sharp_basics_lingar.test_solution;
 using c_sharp_basics_lingar.chess;
+using c_sharp_basics_lingar.test_solution.some_test_01;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -10,13 +11,15 @@ namespace c_sharp_basics_lingar
         {
             
             
+
+
             
             Console.WriteLine("By the help of God -" +
             "" +
             "Some C# basics");
 
-            NotSmartImplementation.Demo();
-            NotSmartImplementation n = new NotSmartImplementation();
+            //NotSmartImplementation.Demo();
+            //NotSmartImplementation n = new NotSmartImplementation();
             //n.Demo();
             //Second s = new Second();
             //Console.WriteLine("second = " + s);
@@ -36,7 +39,9 @@ namespace c_sharp_basics_lingar
             //InheritanceImplementation.Demo();
             //InterfaceImplementation.Demo();
             //AbstractImplementation.Demo();
-            SubjectsSystem.TestSubjectSystem();
+            //SubjectsSystem.TestSubjectSystem();
+
+            PaymentsSystem.DemoPaymentsSystem();
 
         }
     }
