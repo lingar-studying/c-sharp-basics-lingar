@@ -41,12 +41,33 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
         //הכמות הנכונה של מס' האמצעים ששימשו לתשלום הקנייה
         private int paymentsAmount = 0;
 
+
+        public bool Check()
+        {
+            double sum = 0;
+            for (int i = 0; i < payments.Length; i++)
+            {
+                //assuming that payments has no null 
+                sum += payments[i].GetSum();
+            }
+
+            return sum == total;
+        }
+
     }
 
     public class Payment
     {
         //the sum of the payment
         private double sum;
+
+
+       
+        public double GetSum()
+        {
+
+            return sum;
+        }
         //the serial number of the payment. Cash will be -1
         private string serialNumber = "-1";
     }
