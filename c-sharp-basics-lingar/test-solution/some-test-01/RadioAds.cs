@@ -15,6 +15,8 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
         private double price;
 
         public int GetLength() { return length; }
+        public double GetPrice() { return price; }
+
     }
 
 
@@ -24,6 +26,8 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
         // הפרסומות בשעת שידור
         //ההנחה שהמערך כולל את כל הפרסומות ששודרו ללא ריקים
         private Advert[] adverts = new Advert[0];
+
+        public Advert[] GetAdverts() { return adverts; }    
 
         //שעת השידור הספציפית בין 0 ל-23, ברירת מחדל -1
         private int currentHour = -1;
@@ -40,7 +44,8 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
             this.currentHour = currentHour;
         }
 
-
+        //naorcohen13@gmail.com
+        //yimprogramming@gmail.com
 
         //מקבל את הזמן החופשי שאפשר עדיין לפרסם
         public int FreeTime()
@@ -98,6 +103,34 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
 
 
 
+    }
+
+    public class ManageDay
+    {
+        //the adverts of this day (one advert can be passed to many hours ) 
+        private Advert[] adverts = new Advert[0];
+
+
+        //the adverts hours of this day 
+        //Assuning no null
+        private AdvertHour[] advertHours = new AdvertHour[0];
+
+        public double BenefitDay()
+        {
+
+            double sum = 0;
+            for(int i =0; i < advertHours.Length; i++)
+            {
+
+                for(int j =0; j < advertHours[i].GetAdverts().Length; j++)
+                {
+                    sum += advertHours[i].GetAdverts()[j].GetPrice();
+
+                }
+            }
+
+            return sum;
+        }
     }
 
 }
