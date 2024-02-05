@@ -41,7 +41,8 @@ namespace c_sharp_basics_lingar
             //AbstractImplementation.Demo();
             //SubjectsSystem.TestSubjectSystem();
 
-            PaymentsSystem.DemoPaymentsSystem();
+            //PaymentsSystem.DemoPaymentsSystem();
+            FewObjects.DemoFewObjects();
 
         }
     }
