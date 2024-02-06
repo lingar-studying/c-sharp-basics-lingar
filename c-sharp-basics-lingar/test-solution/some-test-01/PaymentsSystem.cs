@@ -116,6 +116,7 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
                     if (pay is Cash)
                     {
                         counter++;
+                        break;
                     }
 
                 }
