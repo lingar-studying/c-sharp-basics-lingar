@@ -107,18 +107,24 @@ namespace c_sharp_basics_lingar.test_solution.some_test_01
             int counter = 0;
             for (int i = 0; i < buys.Length; i++)
             {
+                bool isCash = true;
                 for (int j = 0; j < buys[i].GetPayments().Length; j++)
                 {
                     //for code clearence 
                     Payment pay = buys[i].GetPayments()[j];
 
                     //Checking that it's cash
-                    if (pay is Cash)
+                    if (!(pay is  Cash) )
                     {
                         counter++;
+                        isCash = false; 
                         break;
                     }
 
+                }
+                if (isCash)
+                {
+                    counter++;
                 }
             }
             return counter;
