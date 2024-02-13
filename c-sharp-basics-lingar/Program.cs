@@ -3,6 +3,7 @@ using System;
 using c_sharp_basics_lingar.test_solution;
 using c_sharp_basics_lingar.chess;
 using c_sharp_basics_lingar.test_solution.some_test_01;
+using c_sharp_basics_lingar.algorithmic.some_challenges;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -42,8 +43,9 @@ namespace c_sharp_basics_lingar
             //SubjectsSystem.TestSubjectSystem();
 
             //PaymentsSystem.DemoPaymentsSystem();
-            FewObjects.DemoFewObjects();
-
+            //FewObjects.DemoFewObjects();
+            Euler.Demo();
+            
         }
     }
 }
