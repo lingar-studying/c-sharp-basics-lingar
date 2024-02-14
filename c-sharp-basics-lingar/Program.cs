@@ -4,6 +4,8 @@ using c_sharp_basics_lingar.test_solution;
 using c_sharp_basics_lingar.chess;
 using c_sharp_basics_lingar.test_solution.some_test_01;
 using c_sharp_basics_lingar.algorithmic.some_challenges;
+using c_sharp_basics_lingar.test_solution.spring_22_A;
+using c_sharp_basics_lingar.test_solution.Summer_23_B;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -44,8 +46,11 @@ namespace c_sharp_basics_lingar
 
             //PaymentsSystem.DemoPaymentsSystem();
             //FewObjects.DemoFewObjects();
-            Euler.Demo();
-            
+            //Question3.Demo();
+
+            Solution3B.Demo();
+
+
         }
     }
 }
