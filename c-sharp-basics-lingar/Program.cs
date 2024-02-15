@@ -6,6 +6,7 @@ using c_sharp_basics_lingar.test_solution.some_test_01;
 using c_sharp_basics_lingar.algorithmic.some_challenges;
 using c_sharp_basics_lingar.test_solution.spring_22_A;
 using c_sharp_basics_lingar.test_solution.Summer_23_B;
+using c_sharp_basics_lingar.algorithmic;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -47,8 +48,9 @@ namespace c_sharp_basics_lingar
             //PaymentsSystem.DemoPaymentsSystem();
             //FewObjects.DemoFewObjects();
             //Question3.Demo();
-
-            Solution3B.Demo();
+            
+            //Solution3B.Demo();
+            AlgoDraft.Demo();
 
 
         }
