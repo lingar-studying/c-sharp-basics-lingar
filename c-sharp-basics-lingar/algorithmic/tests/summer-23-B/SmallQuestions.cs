@@ -8,7 +8,17 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
 
         public static void Demo()
         {
-           Q1.Solve();
+          // Q1.Solve();
+            Console.WriteLine("Q2 solution:");
+            string wordValid = "AbbAc1A";// psdspcxbp , lhsl98l
+            string wordInvalid = "pppp";// kdjtr, kkfasaa,....
+
+            Console.WriteLine("is {0} valid? {1}", wordValid, Q2.IsValid(wordValid));
+
+            Console.WriteLine("is {0} valid? {1}", wordInvalid, Q2.IsValid(wordInvalid));
+
+            Q2.GetNStrings(3);
+
         }
     }
 
@@ -52,5 +62,49 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
            
         }
 
+    }
+
+    public class Q2
+    {
+        //try 3 running, not more 
+
+        public static bool IsValid(string s)
+        {
+
+            //check if it's odd 
+            if(s.Length % 2 == 0 )return false;
+
+            //check if valid                                            
+            //s[0] - first char s[length-1] last char - s[length / 2] - middle char. 
+            if (s[0] == s[s.Length-1] && s[0] == s[s.Length / 2])
+            {
+                return true;
+            }
+
+            return false;
+        }
+        //B - get 23 strings. I did the number as parameter for changing it
+        public static void GetNStrings(int length) {
+            
+            //preparing array for holding the values
+            string[] myString = new string[length];
+
+            int i = 0;
+            int countValids = 0;
+            while (i < myString.Length)
+            {
+                //getting the strings
+                Console.WriteLine("Insert {0}/{1} strings please...", i+1, length);
+                string str = Console.ReadLine();
+                if (IsValid(str))
+                {
+                    Console.WriteLine("valid...");
+                    countValids++;
+                }
+                i++;
+            }
+            Console.WriteLine("Valids Strings - {0}, Invalid Strings - {1}", countValids, length - countValids);
+
+        }
     }
 }
