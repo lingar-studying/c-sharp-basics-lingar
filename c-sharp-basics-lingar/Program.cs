@@ -49,12 +49,12 @@ namespace c_sharp_basics_lingar
             //PaymentsSystem.DemoPaymentsSystem();
             //FewObjects.DemoFewObjects();
             //Question3.Demo();
-            
+
             //Solution3B.Demo();
             //AlgoDraft.Demo();
 
-            SmallQuestions.Demo();
-
+            //SmallQuestions.Demo();
+            HowTo.AddItemToArray();
         }
     }
 }
