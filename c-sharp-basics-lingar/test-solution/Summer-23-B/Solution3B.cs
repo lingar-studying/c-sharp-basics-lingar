@@ -24,8 +24,9 @@ namespace c_sharp_basics_lingar.test_solution.Summer_23_B
             //Circle c5 = (Circle)s5;//runtime error
 
             //Shape s = (Circle)(new Cylinder());//works
-            //Circle c = (Shape)(new Cylinder());//compilation error
-
+            //Circle c2 = (Shape)(new Cylinder());//compilation error
+            Sqaure sqaure = new Sqaure();
+            sqaure.Do1();
 
 
 
@@ -37,14 +38,20 @@ namespace c_sharp_basics_lingar.test_solution.Summer_23_B
     {
         public virtual void Do1()
         {
-
+            Console.WriteLine("Do1 - Shape");
         }
         //public void Do1()
         //{
 
         //}
     }
-    public class Sqaure : Shape { }
+    public class Sqaure : Shape {
+        public override void Do1()
+        {
+            base.Do1();
+            Console.WriteLine("Do1 - Square ");
+        }
+    }
 
     public class Triangle : Shape { }
 

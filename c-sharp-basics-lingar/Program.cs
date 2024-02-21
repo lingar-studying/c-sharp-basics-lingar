@@ -50,11 +50,11 @@ namespace c_sharp_basics_lingar
             //FewObjects.DemoFewObjects();
             //Question3.Demo();
 
-            //Solution3B.Demo();
+            Solution3B.Demo();
             //AlgoDraft.Demo();
 
             //SmallQuestions.Demo();
-            HowTo.AddItemToArray();
+            //HowTo.AddItemToArray();
         }
     }
 }
