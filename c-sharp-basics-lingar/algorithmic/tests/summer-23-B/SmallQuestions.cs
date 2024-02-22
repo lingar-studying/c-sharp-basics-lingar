@@ -19,6 +19,8 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
 
             Q2.GetNStrings(3);
 
+            Q3.Solve();
+
         }
     }
 
@@ -107,4 +109,46 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
 
         }
     }
+
+    public class Q3
+    {
+        public static void Solve()
+        {
+            Console.WriteLine("Solve and test Q3");
+            int[] arr1 = { 1, 4, -6, -4 };
+            int[] arr2 = { 1, 4, -6, -4 , 3};
+
+            int[] arr3 = { 1, 4, -6, 4 };
+
+            Console.WriteLine(IsEqualArray(arr1));//true
+            Console.WriteLine(IsEqualArray(arr2));//false
+            Console.WriteLine(IsEqualArray(arr3));//false
+
+        }
+        public static bool IsEqualArray(int[] array)
+        {
+            if (array.Length % 2 != 0) return false;
+            int countNegative =0, countPositive = 0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                if(array[i] != 0)
+                {
+                    if(array[i] < 0)
+                    {
+                        countNegative++;
+                    }
+                    else { countPositive++; }
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
+            return countNegative == countPositive;
+        }
+    }
+
+
 }
