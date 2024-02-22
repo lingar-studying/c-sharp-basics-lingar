@@ -9,15 +9,15 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
         public static void Demo()
         {
           // Q1.Solve();
-            Console.WriteLine("Q2 solution:");
-            string wordValid = "AbbAc1A";// psdspcxbp , lhsl98l
-            string wordInvalid = "pppp";// kdjtr, kkfasaa,....
+            //Console.WriteLine("Q2 solution:");
+            //string wordValid = "AbbAc1A";// psdspcxbp , lhsl98l
+            //string wordInvalid = "pppp";// kdjtr, kkfasaa,....
 
-            Console.WriteLine("is {0} valid? {1}", wordValid, Q2.IsValid(wordValid));
+            //Console.WriteLine("is {0} valid? {1}", wordValid, Q2.IsValid(wordValid));
 
-            Console.WriteLine("is {0} valid? {1}", wordInvalid, Q2.IsValid(wordInvalid));
+            //Console.WriteLine("is {0} valid? {1}", wordInvalid, Q2.IsValid(wordInvalid));
 
-            Q2.GetNStrings(3);
+            //Q2.GetNStrings(3);
 
             Q3.Solve();
 
@@ -116,13 +116,27 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
         {
             Console.WriteLine("Solve and test Q3");
             int[] arr1 = { 1, 4, -6, -4 };
+           
+
             int[] arr2 = { 1, 4, -6, -4 , 3};
+         
 
             int[] arr3 = { 1, 4, -6, 4 };
-
+         
             Console.WriteLine(IsEqualArray(arr1));//true
+            Print(arr1);
+            Console.WriteLine();
+
             Console.WriteLine(IsEqualArray(arr2));//false
+            Print(arr2);
+            Console.WriteLine();
+
             Console.WriteLine(IsEqualArray(arr3));//false
+            Print(arr3);
+            Console.WriteLine();
+
+
+
 
         }
         public static bool IsEqualArray(int[] array)
@@ -147,6 +161,25 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
             }
 
             return countNegative == countPositive;
+        }
+
+        public static void Print(int[] array)
+        {
+            if (IsEqualArray(array))
+            {
+                for(int i = 0; i < array.Length; i++)
+                {
+                    Console.Write(array[i] + ",");
+                }
+
+            }
+            else
+            {
+                for (int i = array.Length-1; i>= 0  ; i--)
+                {
+                    Console.Write(array[i] + ",");
+                }
+            }
         }
     }
 
