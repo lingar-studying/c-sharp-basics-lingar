@@ -8,6 +8,7 @@ using c_sharp_basics_lingar.test_solution.spring_22_A;
 using c_sharp_basics_lingar.test_solution.Summer_23_B;
 using c_sharp_basics_lingar.algorithmic;
 using c_sharp_basics_lingar.algorithmic.tests.summer_23_B;
+using c_sharp_basics_lingar.test_solution.middle_test;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -55,7 +56,9 @@ namespace c_sharp_basics_lingar
 
             //SmallQuestions.Demo();
             //HowTo.Demo();
-            Part2.Demo();
+            //Part2.Demo();
+
+            MiddleTestQ4.Demo();
         }
     }
 }
