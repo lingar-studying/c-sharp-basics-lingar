@@ -55,7 +55,8 @@ namespace c_sharp_basics_lingar
 
             //SmallQuestions.Demo();
             //HowTo.Demo();
-            Part2.Demo();
+            //Part2.Demo();
+            Solution6.Demo();
         }
     }
 }
