@@ -19,8 +19,9 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
 
             //Q2.GetNStrings(3);
 
-            Q3.Solve();
-
+            //Q3.Solve();
+                
+            Q4.Demo();
         }
     }
 
@@ -183,5 +184,90 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
         }
     }
 
+
+    //solution q Q4
+
+
+    //אובייקט משלוח פרחים
+    public class FlowerPackage
+    {
+        //show here enum 
+        public string type = "";
+
+        public int num = 0;
+        public int time = 0;
+        public double price = 0;
+
+        //default package
+        public FlowerPackage(string type, double price)
+        {
+
+            this.type = type;
+            this.price = price;
+            num = 2000;
+            time = 12;
+
+        }
+        
+        public override string ToString()
+        {
+            return string.Format("Flower[type = {0}| num={1}| time={2}| price={3}]",type, num, time, price);
+        }
+    }
+
+    public class Q4
+    {
+        public static void Demo()
+        {
+            FlowerPackage f1 = new FlowerPackage("Jasmine", 10.3);
+            Console.WriteLine(f1);
+
+            FlowerPackage f2 = new FlowerPackage("Sigalit", 7.67);
+
+            f2.num = 3;
+            f2.time = 6;
+
+
+
+
+
+            FlowerPackage f3 = new FlowerPackage("Nerkis", 6);
+
+            f3.num = 235;
+            f3.time = 20;
+            Console.WriteLine("----");
+
+            Compensation(new FlowerPackage[] { f1, f2, f3 }, 25);
+            Console.WriteLine("----");
+            Compensation(new FlowerPackage[] { f1, f2, f3 }, 15);
+            Console.WriteLine("----");
+
+            Compensation(new FlowerPackage[] { f1, f2, f3 }, 7);
+
+            Console.WriteLine("----");
+
+            Compensation(new FlowerPackage[] { f1, f2, f3 }, 3);
+
+
+        }
+
+        public static void Compensation(FlowerPackage[] arr, int flyTime)
+        {
+            double lose = 0;
+            Console.WriteLine("Not good deliveries:");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if(flyTime > arr[i].time)
+                {
+                    double currentLose = arr[i].price * arr[i].num;
+                    lose += currentLose;
+
+                    Console.WriteLine(arr[i] + "\n---lost: " + currentLose + "---");
+                }
+            }
+            Console.WriteLine("Total Lose = " + lose);
+        }
+    }
 
 }

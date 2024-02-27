@@ -53,10 +53,11 @@ namespace c_sharp_basics_lingar
             //Solution3B.Demo();
             //AlgoDraft.Demo();
 
-            //SmallQuestions.Demo();
+            SmallQuestions.Demo();
             //HowTo.Demo();
             //Part2.Demo();
-            Solution6.Demo();
+            //Solution6.Demo();
+
         }
     }
 }
