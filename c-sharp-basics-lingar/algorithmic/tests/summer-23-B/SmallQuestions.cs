@@ -277,8 +277,18 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
     {
         public static void Solve()
         {
-            //Debug it
+            //A-Debug it and test your answers on the tracking table
             Console.WriteLine("Secret = " + Secret(37245));
+            //B - 2000 ? V
+            //C-הפעולה מונה כמה חילוקים ב10 יש מהמס' עצמו עד 0 
+            // במקביל היא בודקת בכל חילוק החל מהמס' עצמו אם המס' זוגי.
+            // היא מחזירה את מס' הפעמים שהתוצאה היתה אי זוגית
+            //במילים אחרות זה גם מבטא את מס' הספרות האי זוגיות במס'
+            Console.WriteLine("Secret = " + Secret(2000));
+
+            Console.WriteLine("Secret = " + Secret(20435678));
+
+
         }
 
         public static int Secret(int num)
