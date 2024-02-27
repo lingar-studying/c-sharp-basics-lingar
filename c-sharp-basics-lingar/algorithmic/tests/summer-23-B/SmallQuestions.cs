@@ -284,11 +284,35 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
             // במקביל היא בודקת בכל חילוק החל מהמס' עצמו אם המס' זוגי.
             // היא מחזירה את מס' הפעמים שהתוצאה היתה אי זוגית
             //במילים אחרות זה גם מבטא את מס' הספרות האי זוגיות במס'
+            //כי בכל ספרה אי זוגית שנמצאת היא תמיד תהיה בצד ימין באיזה סיבוב, דבר שיצור מס' אי זוגי
+            // כלומר יהיה הפרש בין הכולל לזוגי שיתבטא באותה ספרה. וממילא התוצאה תייצג את המספרים האי זוגיים.
             Console.WriteLine("Secret = " + Secret(2000));
 
             Console.WriteLine("Secret = " + Secret(20435678));
+            int[] arr = { 7245, 64, 14783, 32, 824, 199 };
 
 
+            //debug it
+            Console.WriteLine(  "sod = "+  Sod(arr));//B - 1 - 64 
+                                                     //2 - באופן כללי היא מחפשת את התוצאה הכי קטנה מבין המערך. כלומר את המס' שמכיל הכי פחות אי זוגיים. 
+
+
+            int[] arr2 = { 724532, 645903336, 14783, 329, 824975313, 199 };//329
+
+
+            //debug it
+            Console.WriteLine("sod = " + Sod(arr2));//B - 1 - 64 
+        }
+
+        public static int Sod(int[] arr)
+        {
+            int res = 0;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (Secret(arr[i]) < Secret(arr[res]))
+                    res = i;
+            }
+            return arr[res];
         }
 
         public static int Secret(int num)
