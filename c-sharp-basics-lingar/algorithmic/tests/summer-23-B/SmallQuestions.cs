@@ -8,7 +8,7 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
 
         public static void Demo()
         {
-          // Q1.Solve();
+            // Q1.Solve();
             //Console.WriteLine("Q2 solution:");
             //string wordValid = "AbbAc1A";// psdspcxbp , lhsl98l
             //string wordInvalid = "pppp";// kdjtr, kkfasaa,....
@@ -20,8 +20,10 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
             //Q2.GetNStrings(3);
 
             //Q3.Solve();
-                
-            Q4.Demo();
+
+            //Q4.Demo();
+
+            Q5.Solve();
         }
     }
 
@@ -267,6 +269,30 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_23_B
                 }
             }
             Console.WriteLine("Total Lose = " + lose);
+        }
+
+
+    }
+    public class Q5
+    {
+        public static void Solve()
+        {
+            //Debug it
+            Console.WriteLine("Secret = " + Secret(37245));
+        }
+
+        public static int Secret(int num)
+        {
+            int res1 = 0, res2 = 0;
+            while (num > 0)
+            {
+                res1++;
+                if (num % 2 == 0)
+
+                    res2++;
+                num = num / 10;
+            }
+            return res1 - res2;
         }
     }
 
