@@ -11,12 +11,27 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
             SpeedCamera sc1 = new SpeedCamera(02, 06, 100);
             SpeedCamera sc2 = new SpeedCamera(03, 20, 120);
             SpeedCamera sc3 = new SpeedCamera(35, 30, 80);
+            sc3.AddCar(2033345, 50);
+            sc3.AddCar(1133355, 450);
+            sc3.AddCar(5533345, 250);
+            sc3.AddCar(9533345, 240);
+
+
             SpeedCamera[] tests = { sc1, sc2, sc3 };
 
             foreach (SpeedCamera test in tests)
             {
                 Console.WriteLine(test);
             }
+            Console.WriteLine(sc3);
+
+            SpeedCameraNetwork speedCameraNetwor = new SpeedCameraNetwork();
+
+            speedCameraNetwor.AddSpeedCamera(sc3);
+            Console.WriteLine("Speed network = " + speedCameraNetwor);
+
+           
+
         }
 
     }
@@ -29,14 +44,6 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
         private int roadNum = 0;
 
         private Stack<int> vehicleNums = new Stack<int>();
-
-        string _name;
-
-        public string Name
-        {
-            get => _name;
-            set => _name = value;
-        }
 
         public Stack<int> VehicleNums
         {
@@ -64,13 +71,14 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         public override string ToString()
         {
-            return "[SpeedCamera: code = " + code + ", roadNum=" +roadNum + ",maxSpeed=" + maxSpeed+"]";
+            return "[SpeedCamera: code = " + code + ", roadNum=" +roadNum + ",maxSpeed=" + maxSpeed
+                +",vehicleNums = "+ string.Join(",",vehicleNums) +  "]";
         }
 
         //getters and setters come here... 
     }
 
-    public class SpeedCameraNetwor
+    public class SpeedCameraNetwork
     {
 
         // private Stack<SpeedCamera> cameras = new Stack<SpeedCamera>();
@@ -79,6 +87,10 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         private int dayDate = 0;
 
+        public override string ToString()
+        {
+            return "[SpeedCamerNetwork: cameras = " +string.Join<SpeedCamera>(",", cameras) + " ]";
+        }
         //constructors and getters come here... 
 
         public void AddSpeedCamera(SpeedCamera sc)
