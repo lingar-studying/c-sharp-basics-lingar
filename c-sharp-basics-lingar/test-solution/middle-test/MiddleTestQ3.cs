@@ -4,7 +4,7 @@ using System.Text;
 
 namespace c_sharp_basics_lingar.test_solution.middle_test
 {
-    public class MiddleTestQ4
+    public class MiddleTestQ3
     {
         public static void Demo()
         {
