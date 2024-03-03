@@ -4,8 +4,20 @@ using System.Text;
 
 namespace c_sharp_basics_lingar.test_solution.middle_test
 {
-    public class Q1
+    public class MiddleTestQ1
     {
+        public static void Demo()
+        {
+            SpeedCamera sc1 = new SpeedCamera(02, 06, 100);
+            SpeedCamera sc2 = new SpeedCamera(03, 20, 120);
+            SpeedCamera sc3 = new SpeedCamera(35, 30, 80);
+            SpeedCamera[] tests = { sc1, sc2, sc3 };
+
+            foreach (SpeedCamera test in tests)
+            {
+                Console.WriteLine(test);
+            }
+        }
 
     }
 
@@ -48,6 +60,11 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
             {
                 vehicleNums.Push(carNum);
             }
+        }
+
+        public override string ToString()
+        {
+            return "[SpeedCamera: code = " + code + ", roadNum=" +roadNum + ",maxSpeed=" + maxSpeed+"]";
         }
 
         //getters and setters come here... 
