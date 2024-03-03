@@ -99,7 +99,7 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
             {
                 SpeedCamera[] tempCameras = new SpeedCamera[cameras.Length + 1];
                 Array.Copy(cameras, tempCameras, cameras.Length);
-                tempCameras[cameras.Length + 1] = sc;
+                tempCameras[cameras.Length ] = sc;
                 cameras = tempCameras;
             }
 
