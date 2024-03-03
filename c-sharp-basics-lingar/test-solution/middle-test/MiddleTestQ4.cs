@@ -49,7 +49,7 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         //public double Foo(double i) { return i * 10; }// OK - overloading
 
-        public override void Foo(double i) { Console.Write(i); }//Compilation 
+       // public override void Foo(double i) { Console.Write(i); }//Compilation 
     }
 
 }
