@@ -12,7 +12,7 @@ namespace c_sharp_basics_lingar.draft
         }
 
 
-        static void YosefKortFibo()
+        public static void YosefKortFibo()
         {
             int limit = 4000000; // Set your desired limit
             Console.WriteLine("Sum of even-valued terms in Fibonacci sequence up to " + limit + ":");
@@ -34,6 +34,48 @@ namespace c_sharp_basics_lingar.draft
             }
 
             Console.WriteLine(sum);
+        }
+    }
+
+    public class YosefKurtJobs
+    {
+        public static void Solve3()
+        {
+            Console.Write("Enter the size of the array: ");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = { 1, 5, -8, -6 ,3,-2};
+            CheckIfBalanced(arr);
+        }
+
+        public static void CheckIfBalanced(int[] arr)
+        {
+            int counter = 0;
+
+            for (int i = 0; i < arr.Length; i = i + 1)
+            {
+                if (arr[i] == 0)
+                {
+                    Console.WriteLine("unbalanced");
+                    return;
+                }
+                else if (arr[i] > 0)
+                {
+                    counter++;
+                }
+                else
+                {
+                    counter--;
+                }
+            }
+
+            if (counter == 0)
+            {
+                Console.WriteLine("balanced");
+            }
+            else
+            {
+                Console.WriteLine("not balanced");
+            }
         }
     }
 

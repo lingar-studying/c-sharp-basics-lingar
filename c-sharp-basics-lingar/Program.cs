@@ -8,6 +8,7 @@ using c_sharp_basics_lingar.test_solution.spring_22_A;
 using c_sharp_basics_lingar.test_solution.Summer_23_B;
 using c_sharp_basics_lingar.algorithmic;
 using c_sharp_basics_lingar.algorithmic.tests.summer_23_B;
+using c_sharp_basics_lingar.draft;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -53,10 +54,12 @@ namespace c_sharp_basics_lingar
             //Solution3B.Demo();
             //AlgoDraft.Demo();
 
-            SmallQuestions.Demo();
+            //SmallQuestions.Demo();
             //HowTo.Demo();
             //Part2.Demo();
             //Solution6.Demo();
+            //DemoLesson3.YosefKortFibo();
+            YosefKurtJobs.Solve3();
 
         }
     }
