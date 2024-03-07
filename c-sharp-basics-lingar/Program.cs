@@ -64,6 +64,8 @@ namespace c_sharp_basics_lingar
             //d.Demo();
             StaticsDemoAndMore.Demo();
             //Summer21AQ11.Demo();
+
+            //lesson 3 - Algorithmic
         }
     }
 }
