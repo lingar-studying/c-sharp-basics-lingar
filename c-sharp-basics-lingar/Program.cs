@@ -60,12 +60,15 @@ namespace c_sharp_basics_lingar
             //HowTo.Demo();
             //Part2.Demo();
             //Solution6.Demo();
-           // Drafti d = new Drafti();
+            // Drafti d = new Drafti();
             //d.Demo();
-            StaticsDemoAndMore.Demo();
+            //StaticsDemoAndMore.Demo();
             //Summer21AQ11.Demo();
 
             //lesson 3 - Algorithmic
+
+            //Drafti.Demo();
+            DemoBasicsLoop.Demo();
         }
     }
 }
