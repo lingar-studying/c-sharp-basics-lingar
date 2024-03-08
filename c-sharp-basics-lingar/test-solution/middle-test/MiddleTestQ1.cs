@@ -40,7 +40,7 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
             Console.WriteLine("should be true + " + speedCameraNetwor.IsCaught(54886878));
             for (int i = 0; i < vehiclesMock.Length; i++)
             {
-                Console.WriteLine("Is {0} caught? - {1} ", vehiclesMock[i], speedCameraNetwor.IsCaught(vehiclesMock[i]));
+                Console.WriteLine("Is {0} caught? - {1} ", vehiclesMock[i], speedCameraNetwor.IsCaught2(vehiclesMock[i]));
 
             }
 
@@ -51,7 +51,7 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
                 sc3.AddCar(2000000, 500);
 
             }
-           
+
             speedCameraNetwor.PrintDangerousRoads();
 
 
@@ -63,13 +63,18 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
     public class SpeedCamera
     {
         //code of the camera 
-        private int code = 0;
+        private int code;// = 0;
 
-        public int Code { get => code; set => code = value; }
-
+        //מס' כביש
         private int roadNum = 0;
 
-        private Stack<int> vehicleNums = new Stack<int>();
+        //מספרי כלי רכב
+        private Stack<int> vehicleNums = null;
+        //מהירות מקסימלית
+        private int maxSpeed = 0;
+
+        //not relvant for test
+        public int Code { get => code; set => code = value; }
 
         public Stack<int> VehicleNums
         {
@@ -79,13 +84,15 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         public int RoadNum { get => roadNum; set => roadNum = value; }
 
-        private int maxSpeed = 0;
 
         public SpeedCamera(int code, int roadNum, int maxSpeed)
         {
+            //Console.WriteLine("code = " + this.code);
             this.code = code;
             this.roadNum = roadNum;
             this.maxSpeed = maxSpeed;
+            //vehicleNums.Push(11);
+            vehicleNums = new Stack<int>();
         }
 
         public void AddCar(int carNum, int speed)
@@ -110,9 +117,11 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         // private Stack<SpeedCamera> cameras = new Stack<SpeedCamera>();
         private SpeedCamera[] cameras = new SpeedCamera[0];
+        private int dayDate = 0;
+
         private const int MAX_CAMERAS = 100;
 
-        private int dayDate = 0;
+
 
         public override string ToString()
         {
@@ -122,9 +131,11 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         public void AddSpeedCamera(SpeedCamera sc)
         {
+
             if (cameras.Length < MAX_CAMERAS)
             {
                 SpeedCamera[] tempCameras = new SpeedCamera[cameras.Length + 1];
+                //for 
                 Array.Copy(cameras, tempCameras, cameras.Length);
                 tempCameras[cameras.Length] = sc;
                 cameras = tempCameras;
@@ -148,7 +159,7 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
                 Stack<int> clonedVehiclesNum = new Stack<int>(cameras[i].VehicleNums);
                 while (clonedVehiclesNum.Count > 0)
                 {
-                   
+
                     int currCarNum = clonedVehiclesNum.Pop();
                     //Console.WriteLine("check = "  + currCarNum);
                     if (currCarNum == carNum)
@@ -165,13 +176,13 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
                         {
                             if (firstPrint)//in the first print we need to print the last saved code
                             {
-                                Console.WriteLine("many violations " +  lastCode);
+                                Console.WriteLine("many violations " + lastCode);
                                 firstPrint = false;
                             }
                         }//from now on, we need to take and print the new 
                         int previousCode = lastCode;
                         lastCode = cameras[i].Code;
-                        if(lastCode != previousCode)
+                        if (lastCode != previousCode)
                         {
                             Console.WriteLine("many violations " + lastCode);
 
@@ -195,6 +206,34 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
                 }
             }
         }
+        public bool IsCaught2(int carNum)
+        {
 
+            bool found = false;
+            for (int i = 0; i < cameras.Length; i++)
+            {
+                SpeedCamera sc = cameras[i];
+
+                Stack<int> clonedVehiclesNum = new Stack<int>(cameras[i].VehicleNums);
+                while (clonedVehiclesNum.Count > 0)
+                {
+                    int currCarNum = clonedVehiclesNum.Pop();
+                    if (currCarNum == carNum)
+                    {
+                        Console.WriteLine("Caught - camera code = " + sc.Code);
+                        found = true;
+                        //ההנחה שאין צורך להדפיס פעמיים את אותה מצלמה
+                        break;
+
+                    }
+                }
+
+
+
+            }
+            return found;
+
+
+        }
     }
 }
