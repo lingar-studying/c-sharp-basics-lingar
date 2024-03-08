@@ -10,6 +10,7 @@ using c_sharp_basics_lingar.algorithmic;
 using c_sharp_basics_lingar.algorithmic.tests.summer_23_B;
 
 using c_sharp_basics_lingar.test_solution.summer_21_A;
+using c_sharp_basics_lingar.Collecions_and_more;
 
 namespace c_sharp_basics_lingar
 {
@@ -42,7 +43,7 @@ namespace c_sharp_basics_lingar
             //TestHospital.Test1();
             //TestHospital.Test2();
             //AbstractDemo.DemoAbstractClass();
-            // ListLearning.DemoList();
+            //ListLearning.DemoList();
             // Driver.Main222();
             //InheritanceImplementation.Demo();
             //InterfaceImplementation.Demo();
@@ -62,13 +63,13 @@ namespace c_sharp_basics_lingar
             //Solution6.Demo();
             // Drafti d = new Drafti();
             //d.Demo();
-            //StaticsDemoAndMore.Demo();
+            StaticsDemoAndMore.Demo();
             //Summer21AQ11.Demo();
 
             //lesson 3 - Algorithmic
 
             //Drafti.Demo();
-            DemoBasicsLoop.Demo();
+            //DemoBasicsLoop.Demo();
         }
     }
 }

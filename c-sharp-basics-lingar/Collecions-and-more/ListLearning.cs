@@ -17,8 +17,16 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             List<string> l = new List<string>();
             l.Add("Avi");
             l.Add("Yossi");
+            l.Add("Izik");
+
             Console.WriteLine("l = " + l);
+            Console.WriteLine("Count - " + l.Count);
             l.ForEach(Console.WriteLine);
+
+            l.Reverse();
+            l.ForEach(Console.WriteLine);
+
+            Console.WriteLine("second element = " + l[1]);
 
 
             //You can do it with other objects too 
@@ -37,7 +45,7 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             linkedStrings.AddLast("c");
             //linkedStrings.Fo
             //linkedStrings.AddAfter("a","b");
-
+            Console.WriteLine(string.Join("|", linkedStrings));
             //FromDocsLinkedList();
 
             //Stack is like Havit, that you put things in Last In First Out way (LIFO) (You don't provided with other methods
@@ -48,7 +56,7 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             stack.Push("b");
             stack.Push("c");
             stack.Push("d");
-            Console.WriteLine(  "Lingar??");
+            //Console.WriteLine(  "Lingar??");
 
             foreach (var item in stack)
             {
@@ -58,6 +66,7 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             string item1 = stack.Peek();
 
             Console.WriteLine("item1 = (stack is still the same " + item1);
+            //Console.WriteLine(string.Join("|", stack));
 
             foreach (var item in stack)
             {
