@@ -17,11 +17,11 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
     {
 
         //Section A
-        //public int Foo(int i)
-        //{
-        //    return i;
-        //}
-        // public int Foo() { return 1; }//OK - overloading
+        public int Foo(int i)
+        {
+            return i;
+        }
+        //public int Foo() { return 1; }//OK - overloading
 
         //public int Foo(double i) { return (int)i; }//OK - overloading
 
@@ -29,27 +29,27 @@ namespace c_sharp_basics_lingar.test_solution.middle_test
 
         //public double Foo(double i) { return i; }//OK - overloading
 
-        //public void Foo(double i) { Console.Write(i); }//OK - overloading
+        public void Foo(double i) { Console.Write(i); }//OK - overloading
 
         //Section B
 
-        public virtual int Foo(int i)
-        {
-            return i;
-        }
+        //public virtual int Foo(int i)
+        //{
+        //    return i;
+        //}
 
     }
 
     public class B : A
     {
-        //public int Foo() { return 10; }// OK - Overloading
+        public int Foo() { return 10; }// OK - Overloading
         //public override int Foo(int i) { return i * 10; }//OK - Overriding
 
-        //public override double Foo(int i) { return i * 10; }//Compilation
+        //public override double Foo(int i) { return i * 10; }//Compilation - because of the type
 
         //public double Foo(double i) { return i * 10; }// OK - overloading
 
-       // public override void Foo(double i) { Console.Write(i); }//Compilation 
+       //public override void Foo(double i) { Console.Write(i); }//Compilation 
     }
 
 }
