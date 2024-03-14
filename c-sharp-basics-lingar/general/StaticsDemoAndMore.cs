@@ -82,7 +82,7 @@ namespace c_sharp_basics_lingar
             ChildA ca1 = new ChildA();
 
            // ChildA ca2 = (ParentA)ca1;//Compliation 
-
+           //lesson algo Pekudey
         }
     }
 
