@@ -13,6 +13,9 @@ using c_sharp_basics_lingar.test_solution.summer_21_A;
 using c_sharp_basics_lingar.Collecions_and_more;
 using c_sharp_basics_lingar.algorithmic.tests.summer_20_A;
 using c_sharp_basics_lingar.test_solution.middle_test;
+//using MyAssembly1;
+
+using c_sharp_basics_lingar.general;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -75,7 +78,24 @@ namespace c_sharp_basics_lingar
 
             //MiddleTestQ3.Demo();
 
-            SmallQuestionsSummer20A.Demo();
+            //SmallQuestionsSummer20A.Demo();
+
+            //BaseClass.x = 10;
+
+            //ToStringDemo ts = new ToStringDemo();
+
+            //Console.WriteLine("ts = " + ts);
+
+            //EqualsDemo.Demo();
+            MiddleTestQ3.Demo();
+            double d2 = 8.6;
+            int i2 = (int)d2;
+
+            //d2 = i2; Console.WriteLine("d2 = " + d2);
+            PointerDemo.Demo();
+           
+
+
         }
     }
 }

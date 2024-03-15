@@ -1,5 +1,6 @@
 ﻿using c_sharp_basics_lingar.hospital;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,6 +9,7 @@ namespace c_sharp_basics_lingar.Collecions_and_more
 {
     public class ListLearning
     {//check
+        private int x = 9;
 
         public static void DemoList()
         {
@@ -121,7 +123,90 @@ namespace c_sharp_basics_lingar.Collecions_and_more
             //When we'll use each data structure
 
 
+            //Hashtable
+            Hashtable openWith = new Hashtable();
+            Console.WriteLine("Hashtable demo: ");
+            // Add some elements to the hash table. There are no
+            // duplicate keys, but some of the values are duplicates.
+            openWith.Add("txt", "notepad.exe");
+            openWith.Add("bmp", "paint.exe");
+            openWith.Add("dib", "paint.exe");
+            openWith.Add("rtf", "wordpad.exe");
+
+            // The Add method throws an exception if the new key is
+            // already in the hash table.
+            //openWith.Add("txt", "winword.exe");
+
+            try
+            {
+                openWith.Add("txt", "winword.exe");
+            }
+            catch
+            {
+                Console.WriteLine("An element with Key = \"txt\" already exists.");
+            }
+
+            // The Item property is the default property, so you
+            // can omit its name when accessing elements.
+            Console.WriteLine("For key = \"rtf\", value = {0}.", openWith["rtf"]);
+
+            openWith["rtf"] = "ppp";
+
+            Console.WriteLine("For key = \"rtf\", value = {0}.", openWith["rtf"]);
+
+            Hashtable openWith2 = new Hashtable();
+            openWith2.Add(1, employeeSecretery);
+            openWith2.Add(2, "my string");
+            openWith2.Add("three", "my string2");
+
+
+
+            Console.WriteLine(openWith2[1]);
+
+            Console.WriteLine(openWith2["three"]);
+
+            Console.WriteLine(openWith2["four"]);
+            //Console.WriteLine(employeesList["four"]);//error
+
+            Console.WriteLine("set = " );
+            HashSet<int> evenNumbers = new HashSet<int>();
+            HashSet<int> oddNumbers = new HashSet<int>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                // Populate numbers with just even numbers.
+                evenNumbers.Add(i * 2);
+
+                // Populate oddNumbers with just odd numbers.
+                oddNumbers.Add((i * 2) + 1);
+            }
+
+            Console.Write("evenNumbers contains {0} elements: ", evenNumbers.Count);
+            evenNumbers.Add(2);
+            evenNumbers.Add(12);
+
+            DisplaySet(evenNumbers);
+
+            Console.Write("oddNumbers contains {0} elements: ", oddNumbers.Count);
+            DisplaySet(oddNumbers);
+
+
+
+
+
+
+        }//end of DemoList()
+
+        static void  DisplaySet(HashSet<int> collection)
+        {
+            Console.Write("{");
+            foreach (int i in collection)
+            {
+                Console.Write(" {0}", i);
+            }
+            Console.WriteLine(" }");
         }
+        
         public static void FromDocsLinkedList()
         {
             // Create the link list.
