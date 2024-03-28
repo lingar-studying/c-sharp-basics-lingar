@@ -95,7 +95,9 @@ namespace c_sharp_basics_lingar
             //d2 = i2; Console.WriteLine("d2 = " + d2);
             //PointerDemo.Demo();
             //ComplexityDemo.Demo();
-            Summer22AQ3.Test();
+            //Summer22AQ3.Test();
+
+            AlgoSummer20AQ7.Demo();
            
 
 
