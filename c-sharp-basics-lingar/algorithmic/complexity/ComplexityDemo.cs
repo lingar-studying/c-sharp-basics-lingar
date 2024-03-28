@@ -91,6 +91,29 @@ namespace c_sharp_basics_lingar.algorithmic.complexity
                 }
             }
         }
+
+
+        public static void DraftTry(int n)
+        {
+            Console.WriteLine("DraftTry");
+            for (int i = 0; i < n; i++)
+            {
+                for (int k = 0; k < n; k++)
+                {
+                    Console.WriteLine("k = " + k);
+                }
+
+                for (int k = 0; k < n; k++)
+                {
+                    Console.WriteLine("k = " + k);
+                }
+
+                for (int k = 0; k < n; k++)
+                {
+                    Console.WriteLine("k = " + k);
+                }
+            }
+        }
     }
 
     

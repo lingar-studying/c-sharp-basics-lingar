@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="test-solution\d\" />
+    <Folder Include="test-solution\summer-22-A\NewFolder\" />
   </ItemGroup>
 
 </Project>

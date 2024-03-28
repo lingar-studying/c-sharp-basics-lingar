@@ -8,7 +8,7 @@ using c_sharp_basics_lingar.test_solution.spring_22_A;
 using c_sharp_basics_lingar.test_solution.Summer_23_B;
 using c_sharp_basics_lingar.algorithmic;
 using c_sharp_basics_lingar.algorithmic.tests.summer_23_B;
-
+using c_sharp_basics_lingar.test_solution.summer_22_A;
 using c_sharp_basics_lingar.test_solution.summer_21_A;
 using c_sharp_basics_lingar.Collecions_and_more;
 using c_sharp_basics_lingar.algorithmic.tests.summer_20_A;
@@ -94,7 +94,8 @@ namespace c_sharp_basics_lingar
 
             //d2 = i2; Console.WriteLine("d2 = " + d2);
             //PointerDemo.Demo();
-            ComplexityDemo.Demo();
+            //ComplexityDemo.Demo();
+            Summer22AQ3.Test();
            
 
 
