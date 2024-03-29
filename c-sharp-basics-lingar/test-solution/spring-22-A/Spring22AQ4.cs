@@ -43,6 +43,11 @@ namespace c_sharp_basics_lingar.test_solution.spring_22_A
             protected string myString;
 
 
+            public void DoSomething(Abc abc)
+            {
+                abc.myVal = 10;
+            }
+
             public int GetMyVal()
             {
                 //https://stackoverflow.com/a/983061
