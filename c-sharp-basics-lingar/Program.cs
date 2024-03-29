@@ -97,8 +97,8 @@ namespace c_sharp_basics_lingar
             //ComplexityDemo.Demo();
             //Summer22AQ3.Test();
 
-            AlgoSummer20AQ7.Demo();
-           
+            //AlgoSummer20AQ7.Demo();
+            Spring22AQ4.Demo();
 
 
         }
