@@ -15,6 +15,7 @@ using c_sharp_basics_lingar.algorithmic.tests.summer_20_A;
 using c_sharp_basics_lingar.test_solution.middle_test;
 using c_sharp_basics_lingar.algorithmic.complexity;
 using c_sharp_basics_lingar.design_pattern;
+using c_sharp_basics_lingar.algorithmic.recursion;
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -24,11 +25,11 @@ namespace c_sharp_basics_lingar
     {
         public static void Main()
         {
-            
-            
 
 
-            
+
+
+
             Console.WriteLine("By the help of God -" +
             "" +
             "Some C# basics");
@@ -103,7 +104,8 @@ namespace c_sharp_basics_lingar
 
             //PrototypePatternDemo.Demo();
             //BuilderPattern.Demo();
-            ObjectPoolPattern.Demo();
+            // ObjectPoolPattern.Demo();
+            RecursionDemo.Demo();
 
 
         }
