@@ -16,6 +16,8 @@ using c_sharp_basics_lingar.test_solution.middle_test;
 using c_sharp_basics_lingar.algorithmic.complexity;
 using c_sharp_basics_lingar.design_pattern;
 using c_sharp_basics_lingar.algorithmic.recursion;
+using c_sharp_basics_lingar.algorithmic.tests.summer_22_A;
+
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -105,7 +107,9 @@ namespace c_sharp_basics_lingar
             //PrototypePatternDemo.Demo();
             //BuilderPattern.Demo();
             // ObjectPoolPattern.Demo();
-            RecursionDemo.Demo();
+            // RecursionDemo.Demo();
+
+            Summer22ASolutions.Demo();
 
 
         }
