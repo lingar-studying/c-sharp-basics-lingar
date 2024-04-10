@@ -77,7 +77,6 @@ namespace c_sharp_basics_lingar
 
             //lesson 3 - Algorithmic
 
-            //Drafti.Demo();
             //DemoBasicsLoop.Demo();
             //Part2.Demo();
 
@@ -109,7 +108,10 @@ namespace c_sharp_basics_lingar
             // ObjectPoolPattern.Demo();
             // RecursionDemo.Demo();
 
-            Summer22ASolutions.Demo();
+            //Summer22ASolutions.Demo();
+
+
+            Drafti.Demo();
 
 
         }
