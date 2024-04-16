@@ -111,7 +111,7 @@ namespace c_sharp_basics_lingar
 
             //Summer22ASolutions.Demo();
 
-            MagenSpring24AQ4.Demo();
+            MagenSpring24AQ6.Demo();
             
 
 
