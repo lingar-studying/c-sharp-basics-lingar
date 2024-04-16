@@ -6,7 +6,7 @@ using System.Text;
 
 namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 {
-    public class MagenSpirngA24Q4
+    public class MagenSpirngA24Q3
     {
 
         //סעיף ג'

@@ -17,7 +17,7 @@ using c_sharp_basics_lingar.algorithmic.complexity;
 using c_sharp_basics_lingar.design_pattern;
 using c_sharp_basics_lingar.algorithmic.recursion;
 using c_sharp_basics_lingar.algorithmic.tests.summer_22_A;
-
+using c_sharp_basics_lingar.test_solution.magen_spring_24_A;
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -109,7 +109,11 @@ namespace c_sharp_basics_lingar
             // ObjectPoolPattern.Demo();
             // RecursionDemo.Demo();
 
-            Summer22ASolutions.Demo();
+            //Summer22ASolutions.Demo();
+
+            MagenSpring24AQ4.Demo();
+            
+
 
 
         }
