@@ -112,7 +112,8 @@ namespace c_sharp_basics_lingar
 
 
             //Drafti.Demo();
-            Summer22ASolutions. Demo();
+            //Summer22ASolutions. Demo();
+            Sorting.Demo();
 
 
         }
