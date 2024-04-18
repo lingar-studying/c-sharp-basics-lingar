@@ -83,8 +83,9 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
                 if (tvProgram != null && tvProgram is ShowProgram)
                 {
 
-                    if (((ShowProgram)tvProgram).GetMinAge() <= 12)
-                    {
+                    //if (((ShowProgram)tvProgram).GetMinAge() <= 12)
+                        if (((ShowProgram)tvProgram).GetMinAge() <= 12)
+                        {
                         Console.WriteLine(((ShowProgram)tvProgram).GetNumBroadcasts());
                         count++;
                     }
