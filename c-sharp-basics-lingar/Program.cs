@@ -111,7 +111,8 @@ namespace c_sharp_basics_lingar
             //Summer22ASolutions.Demo();
 
 
-            Drafti.Demo();
+            //Drafti.Demo();
+            Summer22ASolutions. Demo();
 
 
         }

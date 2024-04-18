@@ -11,6 +11,20 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_22_A
         {
             //SolveQ1();
             SolveQ2();
+
+            int[] test1 = {1,3,5 };//false
+            int[] test2 = {-6,4,-74 ,65};//true
+            int[] test3 = { -6, 4, -74, 65, 0 ,0 };//false
+
+            bool b = SolveQ3(test1);
+            Console.WriteLine("false ? " + b);
+            b = SolveQ3(test2);
+            Console.WriteLine("true ? " + b);
+            b = SolveQ3(test3);
+            Console.WriteLine("false ? " + b);
+
+
+
         }
 
         public static void SolveQ1()
@@ -69,7 +83,33 @@ namespace c_sharp_basics_lingar.algorithmic.tests.summer_22_A
 
             Console.WriteLine(string.Join(",", arr));
         }
+
+        public static bool SolveQ3(int[] arr)
+        {
+
+            int countPositives = 0, countNegatives = 0;
+            for(int i =0; i < arr.Length; i++)
+            {
+                if(arr[i] > 0 )
+                {
+                    countPositives++;
+
+                }
+                else if (arr[i] < 0)
+                {
+                    countNegatives++;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return countPositives == countNegatives;
+
+        }
     }
+
 
         
 
