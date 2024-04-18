@@ -50,6 +50,47 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
         private int currentYear = 0;
 
+        //9.3 - Getters and Setters for Home
+        public int GetSize()
+        {
+            return size;
+        }
+
+        public void SetSize(int size)
+        {
+            this.size = size;
+        }
+
+        public int GetRooms()
+        {
+            return rooms;
+        }
+
+        public void SetRooms(int rooms) { 
+            this.rooms = rooms;
+
+        }
+
+        public int GetSince()
+        {
+            return since;
+        }
+
+        public void SetSince(int since)
+        {
+            this.since = since;
+        }
+
+        public int GetCurrentYear()
+        {
+            return currentYear;
+        }
+
+        public void SetCurrentYear(int currentYear)
+        {
+            this.currentYear = currentYear;
+        }
+
         public virtual void HomeDetails()
         {
             Console.WriteLine("This is a basic home");
@@ -112,8 +153,9 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
             return true;
         }
 
-
+        //שאלה 9.1
         //שגיאת קימפול
+        //void can't return string
         //public void WhyIDontWork(int year)
         //הפיתרון:
          public string WhyIDontWork(int year)
