@@ -227,6 +227,44 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
         }
 
+        //11.2
+        //should be static
+        public static Address[] GetSince50Years(Home[] homes)
+        {
+            //because we cannot use List we'll initialize it with max results 
+            //in general for this action List is better
+            Address[] result = new Address[homes.Length];
+            int addressIndex = 0;
+            for(int i = 0; i < homes.Length; i++)
+            {
+                if(homes[i].GetCurrentYear() - homes[i].GetSince()> 50)
+                {
+                    result[addressIndex++] = homes[i].GetAddress();
+                }
+            }
+            //creating new array without nulls
+
+            Address[] addresses = new Address[addressIndex];
+            for(int i = 0; i < addressIndex; i++)
+            {
+                addresses[i] = result[i];
+            }
+            return addresses;
+        }
+
+        public static int GetCastlesAmount(Home[] homes)
+        {
+            int count = 0;
+            for(int i = 0; i < homes.Length; i++)
+            {
+                if(homes[i] is Castle)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
     }
 
     //11.1
