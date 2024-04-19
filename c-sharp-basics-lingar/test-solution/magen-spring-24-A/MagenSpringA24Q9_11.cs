@@ -201,6 +201,15 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
             ((Villa)home).SpecificVillaFunc();
 
+            //11.3
+            //הבעיה היא שזה לא תמיד יהיה ווילה ואז תהיה שגיאת זמן ריצה
+            //הפיתרון זה לבדוק אם זה וילה
+            //if(home is Villa)
+            //{
+            //    ((Villa)home).SpecificVillaFunc();
+
+            //}
+
             return true;
         }
 
