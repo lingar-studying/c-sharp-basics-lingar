@@ -113,8 +113,8 @@ namespace c_sharp_basics_lingar
             int x = 10;
             int y = 10;
             //Console.WriteLine(y.Equals(x));
-            MagenSpring24AQ6.Demo();
-            
+            //MagenSpring24AQ6.Demo();
+            MagenSpringA24Q9_11.Demo();
 
 
 
