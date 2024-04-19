@@ -51,6 +51,14 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
             //((Villa)home4).SpecificVillaFunc();
 
+            //11.4
+            Home home1 = new Home();
+            Villa villa  = new Villa();
+            Castle castle = new Castle();
+            Home home222 = new Home();
+            //מערך אחד של 4 שכפולים מעורבים
+            Home[] homes = { home1, villa, castle, home222 };
+
         }
     }
 
