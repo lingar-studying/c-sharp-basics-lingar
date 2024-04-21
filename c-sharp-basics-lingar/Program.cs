@@ -16,7 +16,6 @@ using c_sharp_basics_lingar.test_solution.middle_test;
 using c_sharp_basics_lingar.algorithmic.complexity;
 using c_sharp_basics_lingar.design_pattern;
 using c_sharp_basics_lingar.algorithmic.recursion;
-using c_sharp_basics_lingar.data_structures;
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -76,7 +75,6 @@ namespace c_sharp_basics_lingar
 
             //lesson 3 - Algorithmic
 
-            //Drafti.Demo();
             //DemoBasicsLoop.Demo();
             //Part2.Demo();
 
@@ -106,8 +104,8 @@ namespace c_sharp_basics_lingar
             //PrototypePatternDemo.Demo();
             //BuilderPattern.Demo();
             // ObjectPoolPattern.Demo();
-            //RecursionDemo.Demo();
-            SomeDataStructuresProblems.Demo();
+            RecursionDemo.Demo();
+
 
         }
     }
