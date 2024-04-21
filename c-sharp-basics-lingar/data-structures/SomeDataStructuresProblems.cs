@@ -25,6 +25,8 @@ namespace c_sharp_basics_lingar.data_structures
             Console.WriteLine("false? " + IsThreePali(new Stack<char>(notPalindrom)));
             Console.WriteLine("true? " + IsThreePali(new Stack<char>(palindrom4)));
         }
+            //
+            //צריך בדיקה... 
             //הסיבוכיות היא 
             //O(n)
             //Because at count we have O(n)
