@@ -28,15 +28,8 @@ namespace c_sharp_basics_lingar.data_structures
             //
             //צריך בדיקה... 
             //הסיבוכיות היא 
-            //O(n)
-            //Because at count we have O(n)
-            //אפילו שאנחנו עושים פה כמה מעברים על 
-            //count
-            //ועל המחסנית זה עדיין יצא 
-            //O(n*3) 
-            //או פחות ואנחנו משמיטים קבועים מהתוצאה אז זה 
-            //O(n)
-
+            //O(n^n)
+            //Because we can call in the wrost scenario n time to count which is n so it comes O(n^n)
             public static bool IsThreePali(Stack<char> data)
         {
             if(data.Count % 3 != 0)
