@@ -12,37 +12,44 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
 
             //שאלה 9.4
+            //(A)
             //שגיאת זמן ריצה - 
             //Because home is not Villa type
             Home home = new Castle();
            // Villa v = (Villa)home;
 
+            //(B)
             //שגיאת קימפול
             //המרה למטה לא מפורשת
             //Villa v2 = new Home();
 
+            //(C)
             //שגיאת זמן ריצה
             //the value is not Castle
             //Castle c = (Castle)new Home();
 
-
+            //(D)
             //שגיאת קימפול
             //המרה למטה לא מפורשת
             //Home home2 = new Castle();
             //Castle c = home2;
 
+
+            //(E)
             //רץ תקין
             //המרה מפורשת למטה מאובייקט שהוא באמת אותו ערך
             Home home3 = new Castle();
             Castle c2 = (Castle)home3;
 
+
+            //(F)
             //רץ תקין המרה למעלה לא צריכה להיות מפורשת
             //Villa is Home
 
             Home home5 = new Villa();
 
-
-            //שגיאת זמן ריצה בשורה הבאה. נדרשת המרה מפורשת כדי לגשת לפעולה
+            //(G)
+            //שגיאת קימפול בשורה הבאה. נדרשת המרה מפורשת כדי לגשת לפעולה
             Home home4 = new Villa();
             //home4.SpecificVillaFunc();
             //solution
