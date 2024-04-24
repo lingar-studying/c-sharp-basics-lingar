@@ -30,6 +30,15 @@ namespace c_sharp_basics_lingar.data_structures
             Console.WriteLine("false = " + PosOrder(q1Not));
             Console.WriteLine("true = " + PosOrder(q1Yes));
 
+            int[] q2 = { 6, 8, 12, 14, 16, 18 };//10 (interval 2)
+
+            int[] q2_2 = {500,505,510,515,525,530,535  };//520 (interval 5)
+
+            Console.WriteLine("10 ?  - " + MissingNum(q2) );
+
+            Console.WriteLine("520 ?  - " +  MissingNum(q2_2));
+
+
 
 
         }
@@ -102,6 +111,31 @@ namespace c_sharp_basics_lingar.data_structures
             }
 
             return true;
+        }
+        //q2
+        //assuming that the data is ok 
+        public static int MissingNum(int[] data)
+        {
+
+            //we need to find the interval by finding some reccuring interval 
+
+            //and compare it to the missing interval which is twice of it...
+           
+            //it must be one of those the smaller
+            int interval = Math.Min(data[1]- data[0], data[2] - data[1]);
+            int missingNum = -1;
+
+            for(int i = 0; i < data.Length-1; i++)
+            {
+                if(data[i+1] - data[i] > interval)
+                {
+                    missingNum = data[i] + interval;
+                    return missingNum; ;
+                }
+            }
+            return -1;
+           
+
         }
 
     }
