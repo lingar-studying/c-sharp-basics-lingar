@@ -24,13 +24,21 @@ namespace c_sharp_basics_lingar.data_structures
             Console.WriteLine("true? " + IsThreePali(new Stack<char>(palindrom3)));
             Console.WriteLine("false? " + IsThreePali(new Stack<char>(notPalindrom)));
             Console.WriteLine("true? " + IsThreePali(new Stack<char>(palindrom4)));
+
+            int[] q1Not = { 5, -9, 600, 0, 77 };
+            int[] q1Yes = { 5, -9, 6, 0, 10 };
+            Console.WriteLine("false = " + PosOrder(q1Not));
+            Console.WriteLine("true = " + PosOrder(q1Yes));
+
+
+
         }
-            //
-            //צריך בדיקה... 
-            //הסיבוכיות היא 
-            //O(n^n)
-            //Because we can call in the wrost scenario n time to count which is n so it comes O(n^n)
-            public static bool IsThreePali(Stack<char> data)
+        //
+        //צריך בדיקה... 
+        //הסיבוכיות היא 
+        //O(n^n)
+        //Because we can call in the wrost scenario n time to count which is n so it comes O(n^n)
+        public static bool IsThreePali(Stack<char> data)
         {
             if(data.Count % 3 != 0)
             {
@@ -68,5 +76,33 @@ namespace c_sharp_basics_lingar.data_structures
 
             return true;
         }
+
+
+        //from here - chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://kadman11.wordpress.com/wp-content/uploads/2023/12/t381_2023.pdf
+        //the solution is: chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://kadman11.wordpress.com/wp-content/uploads/2023/12/pitaron899381_2023.pdf
+
+        //q1
+        public static bool PosOrder(int[] data)
+        {
+            int last = 0;
+            for(int i = 0; i < data.Length; i++)
+            {
+                if(data[i] > 0)
+                {
+                    if (data[i] < last)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        last = data[i];
+                    }
+                }
+                
+            }
+
+            return true;
+        }
+
     }
 }

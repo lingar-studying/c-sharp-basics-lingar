@@ -17,6 +17,7 @@ using c_sharp_basics_lingar.algorithmic.complexity;
 using c_sharp_basics_lingar.design_pattern;
 using c_sharp_basics_lingar.algorithmic.recursion;
 using c_sharp_basics_lingar.data_structures.tests.summer_22_a_data_structures;
+using c_sharp_basics_lingar.data_structures;
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -106,7 +107,8 @@ namespace c_sharp_basics_lingar
             //BuilderPattern.Demo();
             // ObjectPoolPattern.Demo();
             //RecursionDemo.Demo();
-            SummerA22_DataStrctures.Demo();
+            //SummerA22_DataStrctures.Demo();
+            SomeDataStructuresProblems.Demo();
 
 
         }
