@@ -137,6 +137,17 @@ namespace c_sharp_basics_lingar.data_structures
            
 
         }
+        //here 
+        //chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://kadman11.wordpress.com/wp-content/uploads/2023/11/t205_16.pdf
+        //q4
+
+        public static LinkedListNode<int> FirstLeft(LinkedListNode<int> pos)
+        {
+
+
+
+            return null;
+        }
 
     }
 }
