@@ -39,7 +39,58 @@ namespace c_sharp_basics_lingar.data_structures
             Console.WriteLine("520 ?  - " +  MissingNum(q2_2));
 
 
+            LinkedList<int> q3LinkedList = new LinkedList<int>(q2);
+            LinkedListNode<int> node1 = new LinkedListNode<int>(3);
+            Console.WriteLine("q3Linkedlist  = " + String.Join(" | ", q3LinkedList) );
 
+            LinkedList<int> temp = new LinkedList<int>();
+            int count = 0;
+           while(q3LinkedList.Count > 0)
+            {
+                count++;
+                if(count == 3)
+                {
+                    temp.AddLast(node1 );
+                }
+
+                //won't work since you need first to remove it, you cannot insert node into two lists
+                //temp.AddLast(q3LinkedList.First);
+                LinkedListNode<int> node2 = q3LinkedList.First;
+                q3LinkedList.RemoveFirst();
+                temp.AddLast(node2 );
+            }
+            q3LinkedList = temp;
+            Console.WriteLine("q3Linkedlist after adding 1 = " + String.Join(" | ", q3LinkedList));
+
+            //((ICollection<LinkedListNode<int>>) q3LinkedList).Add(node1);
+            // Console.WriteLine("q3Linkedlist after adding 2 = " + String.Join(" | ", q3LinkedList));
+
+
+            Console.WriteLine("First left = " + FirstLeft(node1).Value);
+
+
+            Clown c1 = new Clown("Light", 1);
+            Clown c2 = new Clown("Medium", 2);
+            Clown c3 = new Clown("Heavy", 3);
+
+            Clown[] clownsFalse = { c1, c3, c2 };
+            Clown[] clownsTrue = {c1, c2, c3};
+
+            LinkedList<Clown> notStablePyramid = new LinkedList<Clown>(clownsFalse);
+            LinkedList<Clown> stablePyramid = new LinkedList<Clown>(clownsTrue);
+
+            Pyramid notStable = new Pyramid(notStablePyramid);
+            Pyramid stable = new Pyramid(stablePyramid);
+            Console.WriteLine("pyramid = {0} stable ? - {1}", notStable , notStable.IsStable());
+            Console.WriteLine("pyramid = {0} stable ? - {1}",stable , stable.IsStable());
+            //adding clowns: 
+            Clown notC = new Clown("not enough", 2);
+            Clown yesC = new Clown("Can added", 5);
+
+            stable.AddClown(notC);
+            Console.WriteLine("pyramid after trying adding clown {0} ={1} ", notC, stable );
+            stable.AddClown(yesC);
+            Console.WriteLine("pyramid after trying adding clown {0} ={1} ", yesC, stable);
 
         }
         //
@@ -144,10 +195,80 @@ namespace c_sharp_basics_lingar.data_structures
         public static LinkedListNode<int> FirstLeft(LinkedListNode<int> pos)
         {
 
+            while (pos.Previous != null)//previos is like GetRight();
+                pos = pos.Previous;
+            
 
 
-            return null;
+            return pos;
         }
 
+        //q5 
+        public class Clown
+        {
+            private string name; // שם ליצן
+            private int weight; // משקל ליצן
+
+            public Clown(string name, int weight)
+            {
+                this.name = name;
+                this.weight = weight;
+            }
+
+            public int Weight { get=>weight; set=>this.weight = value; }
+
+            public override string ToString()
+            {
+                return string.Format("Clown = [name={0}, weight =  {1}] \n", name, weight);
+            }
+        }
+
+        public class Pyramid
+        {
+            private LinkedList<Clown> clowns = null;
+
+            public Pyramid(LinkedList<Clown> clowns)
+            {
+                this.clowns = clowns;
+            }
+            public bool IsStable()
+            {
+                LinkedList<Clown> temp = new LinkedList<Clown>(clowns);
+
+                Clown previous = temp.First.Value;
+                temp.RemoveFirst();
+                while(temp.Count > 0)
+                {
+                    if(previous.Weight > temp.First.Value.Weight)
+                    {
+                        return false;
+                    }
+                    previous = temp.First.Value;    
+                    temp.RemoveFirst();
+
+                }
+
+
+
+                return true;
+            }
+
+            public bool AddClown(Clown clown)
+            {
+
+                if (clown.Weight >= clowns.Last.Value.Weight)
+                {
+                    clowns.AddLast(clown);
+                    return true;
+                }
+                return false;
+
+            }
+
+            public override string ToString()
+            {
+                return "Clowns = " + string.Join(",", clowns);
+            }
+        }
     }
 }
