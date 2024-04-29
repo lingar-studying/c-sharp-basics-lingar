@@ -54,9 +54,13 @@ namespace c_sharp_basics_lingar.polymorphism
             ((Child1)mixed1).Child1Function();
 
             //וגם פה בדיוק כמו מקודם, אם זה לא נכון, זה יקרוס בזמן הריצה
-            ((Child2)mixed1).Child2Function();//שגיאת ריצה, כי האובייקט לא מהערך הזה
+            //((Child2)mixed1).Child2Function();//שגיאת ריצה, כי האובייקט לא מהערך הזה
 
 
+            Child3 c7 = new Child3();
+
+            //במידה והפעולה לא נדרסה בתולדה, היא תקרא למה שקורה בתוך ההורה
+            c7.OverrideMe(3);//parent1 Override
 
         }
 
@@ -143,5 +147,23 @@ namespace c_sharp_basics_lingar.polymorphism
         {
             return "OverrideMe of Child2";
         }
+    }
+
+    public class Child3 : Parent1
+    {
+
+        //לא ניתן לדרוס מתודה עם ערך אחר. הכל חייב להיות זהה
+
+        //שגיאות קימפול:
+
+        //public override int OverrideMe(int n)
+        //{
+        //    return base.OverrideMe(n);
+        //}
+
+        //public override string OverrideMe(int n, int y)
+        //{
+        //    return base.OverrideMe(n);
+        //}
     }
 }
