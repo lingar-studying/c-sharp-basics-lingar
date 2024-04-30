@@ -12,7 +12,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
             //סעיף ג
             //CC_MagenA ac = new AA_MagenA();//לא תקין,שגיאת קימפול, כי 
-            //AA doesn't inherit CC and don't have any connection - complication error 
+            //AA doesn't inherit/implements CC and don't have any connection - complication error 
             // AA_MagenA ab = new BB_MagenA();// תקין המרה כלפיי מעלה
 
             //סעיף ד
@@ -107,6 +107,9 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
         }
         public void IsExtends()
         {
+            //int i2 = 0; 
+            //int i2 = 0; 
+            
             Console.WriteLine(" true");
         }
     }

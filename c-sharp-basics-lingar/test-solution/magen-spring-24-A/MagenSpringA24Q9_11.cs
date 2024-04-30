@@ -63,6 +63,10 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
             Villa villa  = new Villa();
             Castle castle = new Castle();
             Home home222 = new Home();
+
+            Castle c223 = new Castle();
+           // Villa villla22 = ((Villa)(Home)c223);
+               
             //מערך אחד של 4 שכפולים מעורבים
             Home[] homes = { home1, villa, castle, home222 };
 

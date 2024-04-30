@@ -112,9 +112,9 @@ namespace c_sharp_basics_lingar
 
             //Summer22ASolutions.Demo();
 
-            //MagenSpringA24Q9_11.Demo();
+            MagenSpringA24Q9_11.Demo();
             //SomeDataStructuresProblems.Demo();
-            OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
+           //. OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
 
 
 

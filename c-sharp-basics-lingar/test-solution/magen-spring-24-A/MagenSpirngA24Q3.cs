@@ -11,7 +11,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
         //סעיף ג'
         //כתבו פעולה חיצונית המקבלת מערך של ערוצי טלוויזיה מטיפוס TvChannel, הפעולה תדפיס את שם תוכנית הטלוויזיה בעלת הרייטינג הגבוה  מבין כל ערוצי הטלוויזיה 
-        public static string GetBestShow(TvChannel[] channels)
+        public static void GetBestShow(TvChannel[] channels)
         {
 
             double max = 0;
@@ -36,7 +36,8 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
 
                 }
             }
-            return programName;
+            Console.WriteLine("The best show is - " + programName);
+            //return programName;
         }
     }
 
@@ -69,7 +70,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
          * 
          * 
          ii.	
-        (4 נק') פעולה המחזירה את מספר התוכניות המגבילות את גיל הצפייה ל-12 ומטה 
+        פעולה המחזירה את מספר התוכניות המגבילות את גיל הצפייה ל-12 ומטה 
         ומדפיסה עבור כל תכנית כזו (שמגבילה את גיל הצפייה ל12 ומטה)
         את מספר השידורים שלה בעונה.
          * */
