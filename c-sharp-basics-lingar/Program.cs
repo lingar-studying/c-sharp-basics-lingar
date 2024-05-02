@@ -20,6 +20,7 @@ using c_sharp_basics_lingar.algorithmic.tests.summer_22_A;
 using c_sharp_basics_lingar.test_solution.magen_spring_24_A;
 using c_sharp_basics_lingar.data_structures;
 using c_sharp_basics_lingar.polymorphism;
+using c_sharp_basics_lingar.algorithmic.tests.spring_22_A;
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -112,10 +113,10 @@ namespace c_sharp_basics_lingar
 
             //Summer22ASolutions.Demo();
 
-            MagenSpringA24Q9_11.Demo();
+            //MagenSpringA24Q9_11.Demo();
             //SomeDataStructuresProblems.Demo();
-           //. OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
-
+            //. OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
+            SimpleQuestionsSpring22A.Demo();
 
 
 
