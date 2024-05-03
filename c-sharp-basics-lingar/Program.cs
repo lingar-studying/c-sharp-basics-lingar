@@ -21,6 +21,7 @@ using c_sharp_basics_lingar.test_solution.magen_spring_24_A;
 using c_sharp_basics_lingar.data_structures;
 using c_sharp_basics_lingar.polymorphism;
 using c_sharp_basics_lingar.algorithmic.tests.spring_22_A;
+using c_sharp_basics_lingar.fun.project_euler;
 //using MyAssembly1;
 
 using c_sharp_basics_lingar.general;
@@ -116,7 +117,8 @@ namespace c_sharp_basics_lingar
             //MagenSpringA24Q9_11.Demo();
             //SomeDataStructuresProblems.Demo();
             //. OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
-            SimpleQuestionsSpring22A.Demo();
+            //SimpleQuestionsSpring22A.Demo();
+            EulerProblem47.Demo();
 
 
 
