@@ -6,7 +6,7 @@ using System.Text;
  * 
 https://projecteuler.net/problem=47
 
-Problem - find the first number of the sequence of four number with distinct factors. 
+Problem - find the first number of the sequence of four number with distinct prime factors.
 
 Steps to solve: 
 *** all should be done in the fastest and efficient way ***
@@ -25,7 +25,17 @@ Discussion
     if it's not - it's a prime
     if it's odd - you can skip evens. 
     If you reach half or more then half of the number - it won't be divided any more. 
-    
+    For efficiency you can save the primes you aggregating and check vs them. 
+
+    Maybe there are more efficient ways to do it. 
+
+Maybe by multiplying primes in each other. 
+Or something else. 
+
+Work on it. 
+
+https://byjus.com/maths/factors-of-a-number/
+https://stackoverflow.com/questions/239865/best-way-to-find-all-factors-of-a-given-number
  * */
 namespace c_sharp_basics_lingar.fun.project_euler
 {
