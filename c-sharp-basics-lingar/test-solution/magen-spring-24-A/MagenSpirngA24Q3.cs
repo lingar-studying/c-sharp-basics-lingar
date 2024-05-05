@@ -37,6 +37,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
                 }
             }
             Console.WriteLine("The best show is - " + programName);
+            
             //return programName;
         }
     }
@@ -54,6 +55,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_A
         public void SetPrograms(TvProgram[] programs)
         {
             this.programs = programs;
+
         }
 
         private int current;
