@@ -64,8 +64,8 @@ namespace c_sharp_basics_lingar.fun.project_euler
     public class EulerProblem47
     {
 
-        public static Dictionary<int, int> saved = new Dictionary<int, int>();
-        public static int[] savedPrimes; 
+        public static Dictionary<int, int> savedOld = new Dictionary<int, int>();
+        public static int[] savedPrimesOld;
 
 
         public static List<int> savedPrimesList = new List<int>();
@@ -99,7 +99,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
                 int result = num;
                 currentFactors.Clear();
-                 if (num > 16) return;
+                if (num > 16) return;
                 //start checking the factors. Go over the exist number. 
                 //on each number : 
                 foreach (int prime in primes)
@@ -120,13 +120,13 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
                         if (currentFactors.ContainsKey(prime))
                         {
-                            currentFactors[prime]  += 1;
+                            currentFactors[prime] += 1;
                         }
                         else
                         {
                             currentFactors.Add(prime, 1);
                         }
-                                            
+
                         result = result / prime;//taking the next result (it's must be divided
                         reminder = result % prime;//next divider. 
                     }
@@ -178,7 +178,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
 
                         }
-                       
+
                         previousPrimesFactors = currentFactors;
 
                     }
@@ -194,6 +194,118 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
         }
 
+        public static void Solve2(int amt)
+        {
+            int countFound = 0;
+
+            //Console.WriteLine("check = " + current[2]);
+            List<int> primes = new List<int>();
+            primes.Add(2);
+            List<int> currentFactors = new List<int>();
+
+            //start from 3
+            int num = 2;
+
+            while (true)
+            {
+                //Console.WriteLine("Primes list = " + String.Join("," , primes));
+                num++;
+                //reset the current factors 
+                currentFactors = new List<int>();
+
+                int result = num;
+
+                if (num > 16) return;
+                //start checking the factors. Go over the exist number. 
+                //on each number : 
+                foreach (int prime in primes)
+                {
+                    //you can save unnecessary actions... 
+                    if (prime > num / 2 || result == 1) break;
+
+                    int exponent = 0;
+
+
+                    // divide it vs the saved primes. 
+
+                    int reminder = result % prime;
+                    //if it's can be divide - insert the number to the string current.  
+                    //do this again
+
+                    while (reminder == 0)//better condition:
+
+                    {
+                        exponent++;
+
+
+
+                        result = result / prime;//taking the next result (it's must be divided
+                        reminder = result % prime;//next divider. 
+                    }
+                    if (exponent > 0)
+                        currentFactors.Add(exponent * prime);
+
+                }
+
+
+                //it's now should be or 1 or the number itself. 
+
+                //So if it's more than 1 - it's a prime, add it to the list. Count go into 0. 
+                if (result > 1)
+                {
+                    primes.Add(num);
+                    countFound = 0;
+                    continue;
+
+                }
+                else if (currentFactors.Count != amt)
+                {
+                    savedPrimesList.Clear();
+                    countFound = 0;
+                    continue;
+                }
+                // in this case we need to check
+                else
+                {
+                    //check if distinct against the saved. 
+                    if (IsDistinctNew(currentFactors))
+                    {
+
+                        countFound++;
+                        // if count == amt - print and return .  
+                        if (countFound == amt)
+                        {
+                            Console.WriteLine("The number is " + (num - amt + 1));
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        countFound = 0;
+                    }
+                   
+                }
+            }
+
+
+        }
+
+        public static bool IsDistinctNew(List<int> currentFactors)
+        {
+            for (int i = 0; i < currentFactors.Count; i++)
+            {
+                if (savedPrimesList.Contains(currentFactors[i]){
+                    savedPrimesList = currentFactors;
+                    return false;
+                }
+                else
+                {
+                    savedPrimesList.Add(currentFactors[i]);
+                }
+            }
+
+            return true;
+        }
 
 
         //You need to to compate distint.
@@ -353,10 +465,10 @@ namespace c_sharp_basics_lingar.fun.project_euler
             {
                 return false;
             }
-            foreach(KeyValuePair<int, int> kvp in current)
+            foreach (KeyValuePair<int, int> kvp in current)
             {
-                if( previous.ContainsKey(kvp.Key) && 
-                    
+                if (previous.ContainsKey(kvp.Key) &&
+
                     kvp.Value == previous[kvp.Key])
                 {
                     return false;
@@ -369,25 +481,25 @@ namespace c_sharp_basics_lingar.fun.project_euler
         public static bool IsDistinct5(Dictionary<int, int> current, int amt)
         {
 
-            if(current.Count != amt)
+            if (current.Count != amt)
             {
-                saved.Clear();
+                savedOld.Clear();
                 //saved = current;
 
                 return false;
             }
             foreach (KeyValuePair<int, int> kvp in current)
             {
-                if (saved.ContainsKey(kvp.Key) &&
+                if (savedOld.ContainsKey(kvp.Key) &&
 
-                    kvp.Value == saved[kvp.Key])
+                    kvp.Value == savedOld[kvp.Key])
                 {
-                    saved = current;
+                    savedOld = current;
                     return false;
                 }
                 else
                 {
-                    saved.Add(kvp.Key, kvp.Value);
+                    savedOld.Add(kvp.Key, kvp.Value);
                 }
             }
 
@@ -400,16 +512,16 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
             if (check.Count != amt)
             {
-                savedPrimes = new int[amt * amt];
+                savedPrimesOld = new int[amt * amt];
                 //saved = current;
 
                 return false;
             }
             foreach (int i in check)
             {
-               foreach(int j in savedPrimes)
+                foreach (int j in savedPrimesOld)
                 {
-                    if(i == j)
+                    if (i == j)
                     {
 
                         return false;
