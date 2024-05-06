@@ -63,10 +63,12 @@ namespace c_sharp_basics_lingar.fun.project_euler
 {
     public class EulerProblem47
     {
+
+        public static Dictionary<int, int> saved = new Dictionary<int, int>();
         public static void Demo()
         {
             Console.WriteLine("EulerProblem47");
-            Solve(3);
+            Solve(2);
             string str1 = "2233355", str2 = "23335";
             //Console.WriteLine("Is distinct ? " + IsDistinct2(str1, str2));
         }
@@ -74,7 +76,9 @@ namespace c_sharp_basics_lingar.fun.project_euler
         public static void Solve(int amt)
         {
             int countFound = 0;
-
+            Dictionary<int, int> previousPrimesFactors = new Dictionary<int, int>();
+            Dictionary<int, int> currentFactors = new Dictionary<int, int>();
+            //Console.WriteLine("check = " + current[2]);
             List<int> primes = new List<int>();
             primes.Add(2);
 
@@ -86,16 +90,16 @@ namespace c_sharp_basics_lingar.fun.project_euler
             {
                 //Console.WriteLine("Primes list = " + String.Join("," , primes));
                 num++;
-               
-                int result =num;
-                string temp = "";
-               // if (num > 16) return;
+
+                int result = num;
+                currentFactors.Clear();
+                 if (num > 16) return;
                 //start checking the factors. Go over the exist number. 
                 //on each number : 
                 foreach (int prime in primes)
                 {
                     //you can save unnecessary actions... 
-                    if (prime > num/2 || result == 1) break;
+                    if (prime > num / 2 || result == 1) break;
 
 
 
@@ -107,12 +111,21 @@ namespace c_sharp_basics_lingar.fun.project_euler
                     while (reminder == 0)//better condition:
 
                     {
-                        temp += prime.ToString();
-                        result= result / prime;//taking the next result (it's must be divided
+
+                        if (currentFactors.ContainsKey(prime))
+                        {
+                            currentFactors[prime]  += 1;
+                        }
+                        else
+                        {
+                            currentFactors.Add(prime, 1);
+                        }
+                                            
+                        result = result / prime;//taking the next result (it's must be divided
                         reminder = result % prime;//next divider. 
                     }
                     //if not - go over to the next prime
- 
+
 
                 }
 
@@ -124,7 +137,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
                 {
                     countFound = 0;
                     primes.Add(num);
-                    previous = "";
+                    previousPrimesFactors.Clear();
                     continue;
 
                 }
@@ -134,9 +147,10 @@ namespace c_sharp_basics_lingar.fun.project_euler
                     //  if count == 0 it's the first so assign it to the previous. 
                     //and don't compare. 
 
-                    if (countFound == 0 && previous.Equals(""))
+                    if (countFound == 0 && previousPrimesFactors.Count == 0)
                     {
-                        previous = temp;
+                        previousPrimesFactors = currentFactors;
+                        continue;
                     }
                     // if count more then > 0
                     //  compare the string vs previous. IF it's equal -count. 
@@ -144,20 +158,10 @@ namespace c_sharp_basics_lingar.fun.project_euler
                     else
                     {
                         //get the short and long
-                        string shortS = "", longS = "";
-                        if(temp.Length < previous.Length)
-                        {
-                            shortS = temp;
-                            longS = previous;
-                        }
-                        else
-                        {
-                            shortS = previous;
-                            longS = temp;
-                        }
+
 
                         Console.WriteLine("The number is : " + num);
-                        if (IsDistinct3(shortS, longS, amt))
+                        if (IsDistinct5(currentFactors, amt))
                         {
                             countFound++;
                         }
@@ -166,41 +170,42 @@ namespace c_sharp_basics_lingar.fun.project_euler
                         {
                             countFound = 0;
 
-                            
+
                         }
-                        previous = temp;
+                       
+                        previousPrimesFactors = currentFactors;
 
                     }
                 }
                 // if count == amt - print and return .  
-                if(countFound == amt)
+                if (countFound == amt)
                 {
-                    Console.WriteLine("The number is " + (num - amt +1));
+                    Console.WriteLine("The number is " + (num - amt + 1));
                     return;
                 }
 
             }
-            
+
         }
 
         //You need to to compate distint.
 
         public static bool IsDistinct(string shortS, string longS, int index)
         {
-            if(shortS.Length == index)
+            if (shortS.Length == index)
             {
                 return true;
             }
             char lastChar = shortS[index];
             while (true)
             {
-                if(shortS[index] != longS[index])
+                if (shortS[index] != longS[index])
                 {
 
                 }
             }
 
-            return true;    
+            return true;
         }
         public static bool IsDistinct2(string shortS, string longS, int amt)
         {
@@ -208,13 +213,13 @@ namespace c_sharp_basics_lingar.fun.project_euler
             int countTests = 0;
             while (index < shortS.Length)
             {
-                if(countTests > amt)
+                if (countTests > amt)
                 {
                     return false;
                 }
                 char lastChar = shortS[index];
-                int countA = 0,  countB = 0;
-                while(index < shortS.Length && lastChar == shortS[index])
+                int countA = 0, countB = 0;
+                while (index < shortS.Length && lastChar == shortS[index])
                 {
                     countA++;
                     index++;
@@ -223,7 +228,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
                 countTests++;
 
                 if (indexB < 0) continue;
-                while(indexB < longS.Length &&  lastChar == longS[indexB])
+                while (indexB < longS.Length && lastChar == longS[indexB])
                 {
                     countB++;
                     indexB++;
@@ -243,22 +248,22 @@ namespace c_sharp_basics_lingar.fun.project_euler
             Console.WriteLine("shortS = " + shortS + " longS = " + longS);
 
             //Check the difference chars in each string. 
-            List<char> chars1 = new List <char> ();
+            List<char> chars1 = new List<char>();
             List<char> chars2 = new List<char>();
 
             char lastChar = '-';
             //chars1.Add(lastChar);
-            for(int index = 0; index < shortS.Length; index++)
+            for (int index = 0; index < shortS.Length; index++)
             {
-                if(shortS[index] != lastChar)
+                if (shortS[index] != lastChar)
                 {
                     lastChar = shortS[index];
-                    chars1.Add (lastChar);
+                    chars1.Add(lastChar);
                 }
             }
             //if one of them not equal to amt - return false 
 
-            if (chars1.Count != amt ) return false;
+            if (chars1.Count != amt) return false;
 
             lastChar = '-';
             for (int index = 0; index < longS.Length; index++)
@@ -290,7 +295,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
             //find those which equals
             //
             List<char> equalToCheck = new List<char>();
-            foreach(char c in theShort)
+            foreach (char c in theShort)
             {
                 if (theLong.Contains(c))
                 {
@@ -298,11 +303,11 @@ namespace c_sharp_basics_lingar.fun.project_euler
                 }
             }
 
-            foreach(char c in equalToCheck)
+            foreach (char c in equalToCheck)
             {
                 int index = shortS.IndexOf(c);
                 int countA = 0, countB = 0;
-                while(index < shortS.Length && c == shortS[index])
+                while (index < shortS.Length && c == shortS[index])
                 {
                     countA++;
                     index++;
@@ -313,7 +318,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
                     countB++;
                     index++;
                 }
-                if(countA == countB)
+                if (countA == countB)
                 {
                     return false;
                 }
@@ -332,7 +337,53 @@ namespace c_sharp_basics_lingar.fun.project_euler
             return true;
         }
 
+        public static bool IsDistinct4(Dictionary<int, int> current, Dictionary<int, int> previous, int amt)
+        {
+            Console.WriteLine("current = " + String.Join(",", current) + " previous = " + String.Join(",", previous));
 
+            if (current.Count != amt || previous.Count != amt)
+            {
+                return false;
+            }
+            foreach(KeyValuePair<int, int> kvp in current)
+            {
+                if( previous.ContainsKey(kvp.Key) && 
+                    
+                    kvp.Value == previous[kvp.Key])
+                {
+                    return false;
+                }
+            }
 
+            return true;
+        }
+
+        public static bool IsDistinct5(Dictionary<int, int> current, int amt)
+        {
+
+            if(current.Count != amt)
+            {
+                saved.Clear();
+                //saved = current;
+
+                return false;
+            }
+            foreach (KeyValuePair<int, int> kvp in current)
+            {
+                if (saved.ContainsKey(kvp.Key) &&
+
+                    kvp.Value == saved[kvp.Key])
+                {
+                    saved = current;
+                    return false;
+                }
+                else
+                {
+                    saved.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            return true;
+        }
     }
 }
