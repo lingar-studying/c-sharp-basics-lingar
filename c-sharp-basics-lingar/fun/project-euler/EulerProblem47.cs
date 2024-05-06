@@ -65,6 +65,12 @@ namespace c_sharp_basics_lingar.fun.project_euler
     {
 
         public static Dictionary<int, int> saved = new Dictionary<int, int>();
+        public static int[] savedPrimes; 
+
+
+        public static List<int> savedPrimesList = new List<int>();
+
+
         public static void Demo()
         {
             Console.WriteLine("EulerProblem47");
@@ -187,6 +193,8 @@ namespace c_sharp_basics_lingar.fun.project_euler
             }
 
         }
+
+
 
         //You need to to compate distint.
 
@@ -385,5 +393,32 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
             return true;
         }
+
+
+        public static bool IsDistinct6(List<int> check, int amt)
+        {
+
+            if (check.Count != amt)
+            {
+                savedPrimes = new int[amt * amt];
+                //saved = current;
+
+                return false;
+            }
+            foreach (int i in check)
+            {
+               foreach(int j in savedPrimes)
+                {
+                    if(i == j)
+                    {
+
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
     }
 }
