@@ -74,7 +74,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
         public static void Demo()
         {
             Console.WriteLine("EulerProblem47");
-            Solve(2);
+            Solve2(4);
             string str1 = "2233355", str2 = "23335";
             //Console.WriteLine("Is distinct ? " + IsDistinct2(str1, str2));
         }
@@ -196,7 +196,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
         public static void Solve2(int amt)
         {
-            int countFound = 0;
+            int countFound = 1;
 
             //Console.WriteLine("check = " + current[2]);
             List<int> primes = new List<int>();
@@ -215,7 +215,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
                 int result = num;
 
-                if (num > 16) return;
+                //if (num > 650) return;
                 //start checking the factors. Go over the exist number. 
                 //on each number : 
                 foreach (int prime in primes)
@@ -254,7 +254,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
                 if (result > 1)
                 {
                     primes.Add(num);
-                    countFound = 0;
+                    countFound =0;
                     continue;
 
                 }
@@ -267,6 +267,11 @@ namespace c_sharp_basics_lingar.fun.project_euler
                 // in this case we need to check
                 else
                 {
+                    if(countFound == 0)
+                    {
+                        countFound = 1;
+                        continue;
+                    }
                     //check if distinct against the saved. 
                     if (IsDistinctNew(currentFactors))
                     {
@@ -275,7 +280,7 @@ namespace c_sharp_basics_lingar.fun.project_euler
                         // if count == amt - print and return .  
                         if (countFound == amt)
                         {
-                            Console.WriteLine("The number is " + (num - amt + 1));
+                            Console.WriteLine("The number is " + (num -(amt-1 )));
                             return;
                         }
                     }
@@ -292,9 +297,10 @@ namespace c_sharp_basics_lingar.fun.project_euler
 
         public static bool IsDistinctNew(List<int> currentFactors)
         {
+           // Console.WriteLine("Is distinct new");
             for (int i = 0; i < currentFactors.Count; i++)
             {
-                if (savedPrimesList.Contains(currentFactors[i]){
+                if (savedPrimesList.Contains(currentFactors[i])){
                     savedPrimesList = currentFactors;
                     return false;
                 }
