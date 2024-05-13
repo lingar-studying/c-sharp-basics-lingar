@@ -15,6 +15,49 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             IFillable f;
             //***
 
+            //1 - Will work. The compiler see each class which implements
+            //the interface as the interface itself.  so Ifillable and Iturnable 
+            //considered as children of shape
+
+            //f = (IFillable)c;
+
+            //2-compile error
+            //this is downcasting so it's need explicit downcasting
+            //t = s;
+
+            //3 - as 2 - compile error
+            //f = c;
+            //f.Fill("Red");
+
+            //(4)
+            //Compile error - since Left(int d), doesn't exist on Circle. 
+            //((Circle)s).Left (45);
+
+            //(5) - as 4 since Fill(string) does not exist on Shape 
+            //Shape d = c;
+            //d.Fill("Yellow");
+
+            //6- Compile error.
+            //as long we doesn't create this constructor to 
+            //Rectangle, it won't work. (and we haven't requested to do it)
+            //And even if we will create it
+            //method Left doesn't exist on the type Fillable
+            //f = new Rectangle(new Point(10, 10), 10, 20);
+            //f.Left(Math.PI);
+
+            //7 - compile error - left not exist on Shape
+            c = s;
+            //c.Left(90);
+
+
+            //Important to know!
+            //The interface will be considered as child of the Parent and
+            //we would be able to do direct casting for that. 
+            //IFillable f2 = (IFillable)new Shape();
+
+
+            //Check the vice versa - not working
+            //Test222 t = (Test222)c;
         }
     }
     public interface IFillable
@@ -30,7 +73,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
     //סעיף א
     public class Shape
     {
-        
+
     }
 
     public class Circle : Shape, IFillable
@@ -44,7 +87,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
     }
 
-    public class Square: Shape, IFillable, ITurnable
+    public class Square : Shape, IFillable, ITurnable
     {
 
         //סעיף ב
@@ -61,7 +104,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         public void Left(int degree) { }
     }
 
-    public class Rectangle: Square
+    public class Rectangle : Square
     {
 
     }
@@ -69,5 +112,12 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
     public class Point
     {
         public Point(int x, int y) { }
+    }
+    public class Test222 : IFillable
+    {
+        public void Fill(string color)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
