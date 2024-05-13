@@ -4,8 +4,20 @@ using System.Text;
 
 namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 {
-    public class Magen_24_B_Q4
+    public class Magen24BQ4
     {
+        //א - בין המחלקות יש דריסת פעולות, במחלקת 
+        /*
+         * סעיף א
+         * 
+         בין המחלקות יש דריסה בפעולה 
+        move 
+        שמיושמת בכל אחת מהמחלקות היורשות ע"י שימוש במילת הקוד 
+        override
+        וכמו שניתן לראות באותה חותמת בלבד.
+        העמסת פעולות פירושה ליצור פעולות עם אותו שם וחותמת שונה – כלומר מספר פאראמטרים שונה, ואנחנו לא רואים את זה קורה כאן. 
+
+                */
 
         public static void Demo()
         {
@@ -16,16 +28,16 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
             //****
 
-            v1.Move();
-            v4.Move();
+            //v1.Move();
+            //v4.Move();
 
-         
+
             //Console.WriteLine(v2.BusDoorsOpen());
 
-            Console.WriteLine(((Rail)v2).RailDoorsOpen());
+            //Console.WriteLine(((Rail)v2).RailDoorsOpen());
 
 
-            Console.WriteLine(((Bus)v2).BusDoorsOpen());
+            //Console.WriteLine(((Bus)v2).BusDoorsOpen());
 
             Console.WriteLine(v3 is Bus);
 
@@ -49,9 +61,9 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         }
     }
 
-    public class Rail: Vehicle
+    public class Rail : Vehicle
     {
-        public Rail(int serialNum): base(serialNum)
+        public Rail(int serialNum) : base(serialNum)
         {
             this.maxSpeed = 300;
         }
@@ -65,7 +77,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         }
     }
 
-    public class Bus: Vehicle
+    public class Bus : Vehicle
     {
         public Bus(int serialNum) : base(serialNum)
         {
