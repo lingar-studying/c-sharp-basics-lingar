@@ -15,7 +15,9 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             barchelona.SetCity("Barcelona");
 
             Console.WriteLine("Team = " + barchelona);
+            Team refe = barchelona;
 
+            Console.WriteLine(barchelona.Equals(refe));
 
         }
 
@@ -35,10 +37,16 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         //משחקים ששוחקו
         private int gamesPlayed;
         //נצחונות
-        public int wins;
+        private int wins;
 
         //הפסדים
-        public int loses;
+        private int loses;
+
+        //תיקו
+        private int draws;
+
+        //נקודות
+        private int points; 
 
         //שערי זכות
         private int goalsFor;
@@ -65,9 +73,10 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             return string.Format("Team=[name={0}, city={1}]", name, city);
         }
 
-
-
-
+        public string GetName()
+        {
+            return this.name;
+        }
     }
 
     public class Game
@@ -85,6 +94,102 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         private int currentMinute;
 
         private bool isActive;
+
+
+
+        //Goal scored by team
+        public void ScroeGoal(Team team)
+        {
+            //אני רק מטפל במה שקשור למשחק
+            //את הטיפול במה שקשור לפרטי הקבוצה אני אשאיר לסוף המשחק
+            //to check if this will work too, I assume that yes:
+            //if (team.Equals(teamA)) { Console.WriteLine("this is team A"); }
+            if (team.GetName().Equals(teamA.GetName())){
+                teamAGoals++;
+            }
+            else
+            {
+                teamBGoals++;
+            }
+        }
+
+        //game finished
+        //ניתן גם לממש את זה בצורות אחרות.
+        public void GameFinished()
+        {
+            //צריך:
+            //לחשב מי ניצח או תיקו
+            //לתת נקודות לכל קבוצה בהתאם
+            //לתת שערים נוספים או שנספגו לכל קבוצה בהתאם
+            //להעריך בהתאם את הפרש השערים
+            //להוסיף לכל קבוצה עוד משחק ששוחק
+            //להפוך את המשחק לאינו פעיל
+
+            //actually we can create a better fit methods, but this naive solution is enough for this test
+
+            //קבוצה א ניצחה
+            if(teamAGoals > teamAGoals)
+            {
+
+                //מעלה את הנצחונות
+                teamA.SetWins(teamA.GetWins() + 1);
+                //מעלה את הנקודות
+                teamA.SetPoints(teamA.GetPoints() + 3);
+
+                //מעלה הפסד לB
+                teamB.SetLoses(teamB.GetLoses() + 1);
+            }
+
+
+            //קבוצה ב -בדיוק להיפך
+            else if (teamBGoals > teamAGoals)
+            {
+
+                //מעלה את הנצחונות
+                teamB.SetWins(teamB.GetWins() + 1);
+                //מעלה את הנקודות
+                teamB.SetPoints(teamB.GetPoints() + 3);
+
+                //מעלה הפסד ל
+                //A
+                teamA.SetLoses(teamA.GetLoses() + 1);
+            }
+
+            //תיקו
+            else
+            {
+                teamA.SetDraws(teamA.GetDraws() + 1);
+                teamA.SetPoints(teamA.GetPoints() + 1);
+                teamB.SetDraws(teamB.GetDraws() + 1);
+
+                teamB.SetPoints(teamB.GetPoints() + 1);
+
+            }
+
+            //מכאן ואילך אלו פעולות שקורות בכל מצב לכן מבצע אותם ביחד כדי לא לכתוב 
+            //קוד כפול
+
+            //לתת שערים נוספים או שנספגו לכל קבוצה בהתאם
+            teamA.SetGoalsFor(teamA.GetGoalsFor() + teamAGoals);
+
+            teamB.SetGoalsFor(teamB.GetGoalsFor() + teamBGoals);
+
+
+            teamA.SetGoalsAgainst(teamA.GetGoalsAgainst() + teamBGoals);
+
+            teamB.SetGoalsAgainst(teamB.GetGoalsAgainst() + teamAGoals);
+            //להוסיף לכל קבוצה עוד משחק ששוחק
+
+            teamA.SetGamesPlayed(teamA.GetGamesPlayed() + 1);
+
+            teamB.SetGamesPlayed(teamB.GetGamesPlayed() + 1);
+
+            //להפוך את המשחק לאינו פעיל
+            isActive = false;
+
+
+
+        }
 
     }
 
