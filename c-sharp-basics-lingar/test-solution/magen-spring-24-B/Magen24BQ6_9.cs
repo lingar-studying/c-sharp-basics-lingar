@@ -214,5 +214,64 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
         private bool isActive;//
 
+
+        //סעיף ה - קבל את הקבוצה שמדורגת גבוה יותר
+        public static Team GetHigherTeam(Team teamA, Team teamB)
+        {
+            //נעבור על כל ההתניות בשאלה
+
+            //בדיקה אם הם מאותה ליגה
+            if(!teamA.GetLeague().Equals(teamB.GetLeague()))
+            {
+                return null;
+            }
+
+            //1.	הקבוצה שיש לה את מירב הנקודות
+            if (teamA.GetPoints() > teamB.GetPoints())
+            {
+                return teamA;
+            }
+            else if(teamA.GetPoints() < teamB.GetPoints())
+            {
+                return teamB;
+            }
+
+            //2.	הקבוצה שיש לה את הפרש השערים הגבוה ביותר
+            if (teamA.GetGoalDifferential() > teamB.GetGoalDifferential())
+            {
+                return teamA;
+
+            }
+
+            else if (teamA.GetGoalDifferential() < teamB.GetGoalDifferential())
+            {
+                return teamB;
+
+            }
+
+            //3.	הקבוצה שכבשה יותר שערים.
+
+            //אפשר גם לפי התנאים העכשוויים להשמיט את זה
+            //אבל אני משאיר למקרה שאולי יכנס עוד תנאי שובר שביון ולא נשים לב שצריך לסדר את התנאי הזה
+            if(teamA.GetGoalsFor() > teamB.GetGoalsFor())
+            {
+                return teamA;
+            }
+
+
+            else if (teamA.GetGoalsFor() < teamB.GetGoalsFor())
+            {
+                return teamB;
+            }
+
+            //4.	במידה וזה עדיין שווה – החזר את הראשונה שהוגשה.
+            return teamA;
+
+            //5.	בכל מקרה אחר – החזר null . 
+            //התנאי הזה כוסה בתחילת הפעולה כשבדקנו אם הם מאותה ליגה. אין מצבים אחרים.
+
+
+        }
+
     }
 }
