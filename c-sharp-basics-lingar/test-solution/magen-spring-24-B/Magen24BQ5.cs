@@ -23,7 +23,9 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
             //2-compile error
             //this is downcasting so it's need explicit downcasting
+            //also, the method doens't exist on ITurnable
             //t = s;
+            //t.Fill("Green");
 
             //3 - as 2 - compile error
             //f = c;
@@ -40,13 +42,16 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             //6- Compile error.
             //as long we doesn't create this constructor to 
             //Rectangle, it won't work. (and we haven't requested to do it)
+
             //And even if we will create it
             //method Left doesn't exist on the type Fillable
+            //also left looking for int not for double.
             //f = new Rectangle(new Point(10, 10), 10, 20);
             //f.Left(Math.PI);
+            //Math.PI
 
             //7 - compile error - left not exist on Shape
-            c = s;
+            //c = s;
             //c.Left(90);
 
 
@@ -79,7 +84,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
     public class Circle : Shape, IFillable
     {
         //סעיף ב
-        public Circle(Point point, int i)
+        public Circle(Point point, double i)
         {
 
         }
@@ -94,7 +99,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         //חשוב ליצור גם אחד ריק, כדי שמלבן לא יזרוק תקלה
         //לחילופין אפשר גם ליצור אחד במלבן שמתאים לבנאי הזה. 
         public Square() { }
-        public Square(Point point, int i)
+        public Square(Point point, double i)
         {
 
         }
@@ -107,6 +112,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
     public class Rectangle : Square
     {
 
+        public Rectangle(Point p, double length1, double length2):base(p, length1) { }
     }
 
     public class Point
