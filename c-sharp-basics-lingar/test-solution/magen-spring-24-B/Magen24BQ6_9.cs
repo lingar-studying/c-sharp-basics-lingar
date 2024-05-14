@@ -103,7 +103,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
         private int roundsAmount;
 
-        private int nextRound;
+        private Round nextRound;
 
         private Team[] teams= new Team[12];
 
