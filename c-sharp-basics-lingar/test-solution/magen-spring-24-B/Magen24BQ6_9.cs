@@ -51,7 +51,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         private int draws;
 
         //נקודות
-        private int points; 
+        private int points;
 
         //שערי זכות
         private int goalsFor;
@@ -91,7 +91,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         //קבוצה ב
         private Team teamB;
 
-        
+
         //מספרי שערים
         private int teamAGoals;
         private int teamBGoals;
@@ -100,6 +100,17 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
         private bool isActive;
 
+        //9-ג
+        private IStadium stadium;//in the constructor we will get the right staudion... or at setter
+        /*_______*/
+
+        //constructor comes here…. 
+
+        public int GetCrowd()
+        {
+
+            return this.stadium.Count();
+        }
 
         //סעיף ג
         //Goal scored by team
@@ -109,7 +120,8 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             //את הטיפול במה שקשור לפרטי הקבוצה אני אשאיר לסוף המשחק
             //to check if this will work too, I assume that yes:
             //if (team.Equals(teamA)) { Console.WriteLine("this is team A"); }
-            if (team.GetName().Equals(teamA.GetName())){
+            if (team.GetName().Equals(teamA.GetName()))
+            {
                 teamAGoals++;
             }
             else
@@ -133,7 +145,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             //actually we can create a better fit methods, but this naive solution is enough for this test
 
             //קבוצה א ניצחה
-            if(teamAGoals > teamAGoals)
+            if (teamAGoals > teamAGoals)
             {
 
                 //מעלה את הנצחונות
@@ -204,7 +216,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         private Game[] games = new Game[6];
     }
 
-    
+
     public class Season
     {
         private int year;
@@ -215,10 +227,49 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
         private Round nextRound;
 
-        private Team[] teams= new Team[12];
+        private Team[] teams = new Team[12];
 
         private bool isActive;//
 
+
+        //סעיף ו - קבל מחסנית של קבוצות מעל מס' נקודות
+        //השתמשתי באובייקט המובנה במערכת
+        //זה מקביל למה שצריך לעשות באובייקט המוכן אישית
+        public Stack<Team> GetTeamsByMorePoints(int points)
+        {
+            Stack<Team> teamsStack = new Stack<Team>();
+
+            for(int i = 0; i < teams.Length; i++)
+            {
+
+                //assuming not null
+                if (teams[i].GetPoints() >= points)
+                teamsStack.Push(teams[i]);
+
+
+            }
+
+            return teamsStack;
+
+
+        }
+ 
+
+
+        //סעיף ו - קבל את הקבוצה עם המס' הגדול ביותר של השערים.
+        public Team MostGoals()
+        {
+            Team team = teams[0];
+            for(int i = 1; i < teams.Length; i++)
+            {
+                if(teams[i] != null && teams[i].GetPoints() > team.GetPoints())
+                {
+                    team = teams[i];
+                }
+            }
+
+            return team;
+        }
 
         //סעיף ה - קבל את הקבוצה שמדורגת גבוה יותר
         public static Team GetHigherTeam(Team teamA, Team teamB)
@@ -226,7 +277,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             //נעבור על כל ההתניות בשאלה
 
             //בדיקה אם הם מאותה ליגה
-            if(!teamA.GetLeague().Equals(teamB.GetLeague()))
+            if (!teamA.GetLeague().Equals(teamB.GetLeague()))
             {
                 return null;
             }
@@ -236,7 +287,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             {
                 return teamA;
             }
-            else if(teamA.GetPoints() < teamB.GetPoints())
+            else if (teamA.GetPoints() < teamB.GetPoints())
             {
                 return teamB;
             }
@@ -258,7 +309,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
             //אפשר גם לפי התנאים העכשוויים להשמיט את זה
             //אבל אני משאיר למקרה שאולי יכנס עוד תנאי שובר שביון ולא נשים לב שצריך לסדר את התנאי הזה
-            if(teamA.GetGoalsFor() > teamB.GetGoalsFor())
+            if (teamA.GetGoalsFor() > teamB.GetGoalsFor())
             {
                 return teamA;
             }
@@ -278,5 +329,43 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
         }
 
+    }//end of class season
+     //סעיף 9
+     //The stadiums:
+    class EnglandStadium : IStadium
+    {
+
+
+
+        public int Count()
+        {
+
+            int someValue = 0;
+            //some counting implementation goes here… 
+            Console.WriteLine("England Counting");
+
+            return someValue;
+
+        }
+
+    }
+
+    class SpainStadium : IStadium
+    {
+
+        public int Count()
+        {
+            int someValue = 0;
+            //some counting implementation goes here… 
+            Console.WriteLine("Spanish Counting");
+            return someValue;
+
+        }
+
+    }
+
+    public interface IStadium
+    {
+        public int Count();
     }
 }
