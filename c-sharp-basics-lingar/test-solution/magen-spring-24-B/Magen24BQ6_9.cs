@@ -96,7 +96,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
         private bool isActive;
 
 
-
+        //סעיף ג
         //Goal scored by team
         public void ScroeGoal(Team team)
         {
@@ -112,7 +112,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
                 teamBGoals++;
             }
         }
-
+        //סעיף ד
         //game finished
         //ניתן גם לממש את זה בצורות אחרות.
         public void GameFinished()
@@ -212,7 +212,7 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
 
         private Team[] teams= new Team[12];
 
-        private bool isActive;
+        private bool isActive;//
 
     }
 }
