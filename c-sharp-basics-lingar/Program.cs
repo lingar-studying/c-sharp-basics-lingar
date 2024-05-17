@@ -25,6 +25,7 @@ using c_sharp_basics_lingar.fun.project_euler;
 using c_sharp_basics_lingar.test_solution.magen_spring_24_B;
 //using MyAssembly1;
 //course Friday
+//course change
 using c_sharp_basics_lingar.general;
 namespace c_sharp_basics_lingar
 {
