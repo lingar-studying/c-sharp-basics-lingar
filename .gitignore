@@ -362,4 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-./c-sharp-basics-lingar/ignoreme.cs
+/c-sharp-basics-lingar/ignoreme.cs
