@@ -28,6 +28,8 @@ using c_sharp_basics_lingar.test_solution.magen_spring_24_B;
 //another change
 using c_sharp_basics_lingar.general;
 using c_sharp_basics_lingar.statics_demo;
+
+using c_sharp_basics_lingar.object_basics;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -125,11 +127,11 @@ namespace c_sharp_basics_lingar
             //Magen24BQ3.Demo();
             //Magen24BQ4.Demo();
             //Magen24BQ5.Demo();
-            Level1 l = new Level1();
+            //Level1 l = new Level1();
             //l.RunProcess();//--->not working
-            Level1.RunProcess();
+            //Level1.RunProcess();
             //Level2.RunProcess();
-
+            TestBasicObject.Demo();
 
 
 
