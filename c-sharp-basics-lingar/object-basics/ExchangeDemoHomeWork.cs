@@ -4,7 +4,7 @@ using System.Text;
 //HOME WORK
 namespace c_sharp_basics_lingar.object_basics
 {
-    public class ExchangeDemo
+    public class ExchangeDemoHomeWork
     {
         //TODO - 
         //Do demo method for 3 stocks ( =מנייה)
