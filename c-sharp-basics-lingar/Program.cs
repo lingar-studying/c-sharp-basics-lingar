@@ -23,9 +23,13 @@ using c_sharp_basics_lingar.polymorphism;
 using c_sharp_basics_lingar.algorithmic.tests.spring_22_A;
 using c_sharp_basics_lingar.fun.project_euler;
 using c_sharp_basics_lingar.test_solution.magen_spring_24_B;
-//using MyAssembly1;
-
+//using MyAssembly
+//course change
+//another change
 using c_sharp_basics_lingar.general;
+using c_sharp_basics_lingar.statics_demo;
+
+using c_sharp_basics_lingar.object_basics;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -120,14 +124,9 @@ namespace c_sharp_basics_lingar
             //. OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
             //SimpleQuestionsSpring22A.Demo();
             //EulerProblem47.Demo();
-           //Magen24BQ3.Demo();
+            //Magen24BQ3.Demo();
             //Magen24BQ4.Demo();
             Magen24BQ5.Demo();
-
-            A a = new A();
-
-            A a1 = a;
-            Console.WriteLine((a==a1) + "is" + (a is a1) );
 
 
 
