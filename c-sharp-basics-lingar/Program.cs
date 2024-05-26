@@ -124,6 +124,11 @@ namespace c_sharp_basics_lingar
             //Magen24BQ4.Demo();
             Magen24BQ5.Demo();
 
+            A a = new A();
+
+            A a1 = a;
+            Console.WriteLine((a==a1) + "is" + (a is a1) );
+
 
 
 
