@@ -126,7 +126,8 @@ namespace c_sharp_basics_lingar
             //EulerProblem47.Demo();
             //Magen24BQ3.Demo();
             //Magen24BQ4.Demo();
-            Magen24BQ5.Demo();
+            //Magen24BQ5.Demo();
+            DemoPolymorphism.Demo();
 
 
 

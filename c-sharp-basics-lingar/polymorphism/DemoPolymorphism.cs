@@ -41,6 +41,11 @@ namespace c_sharp_basics_lingar.polymorphism
             Object a2 = new Apple(10);
             Banana b1 = new Banana(10);
             Object b2 = new Banana(10);
+
+            ICartoon a3 = (ICartoon)new Employee();
+
+            ICartoon a5 = (ICartoon)new SomeOther();
+
             //*******
             //1
             //Console.WriteLine(a1.weight);//compliation - private field
@@ -57,7 +62,7 @@ namespace c_sharp_basics_lingar.polymorphism
             //4 -->working false
             //Console.WriteLine(a2.Equals(a1));
 
-            Object a3 = a2;
+            Object a4 = a2;
             //Console.WriteLine(a2.Equals(a3));//True By Object
 
             //Console.WriteLine(((Apple)a2).Equals(a1));//True by Apple
@@ -83,6 +88,11 @@ namespace c_sharp_basics_lingar.polymorphism
             //Console.WriteLine(b1.Equals((Banana)a2));
 
         }
+
+    }
+
+    public class SomeOther
+    {
 
     }
 
