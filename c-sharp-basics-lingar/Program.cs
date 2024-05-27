@@ -121,13 +121,13 @@ namespace c_sharp_basics_lingar
 
             //MagenSpringA24Q9_11.Demo();
             //SomeDataStructuresProblems.Demo();
-            //. OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
+            OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
             //SimpleQuestionsSpring22A.Demo();
             //EulerProblem47.Demo();
             //Magen24BQ3.Demo();
             //Magen24BQ4.Demo();
             //Magen24BQ5.Demo();
-            DemoPolymorphism.Demo();
+           // DemoPolymorphism.Demo();
 
 
 

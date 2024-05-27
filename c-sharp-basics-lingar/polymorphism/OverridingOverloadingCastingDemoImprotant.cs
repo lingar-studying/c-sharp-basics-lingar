@@ -62,6 +62,9 @@ namespace c_sharp_basics_lingar.polymorphism
             //במידה והפעולה לא נדרסה בתולדה, היא תקרא למה שקורה בתוך ההורה
             c7.OverrideMe(3);//parent1 Override
 
+            Child1 child1 = new Child1();
+            child1.OverrideMe2();
+
         }
 
 
@@ -105,7 +108,13 @@ namespace c_sharp_basics_lingar.polymorphism
         {
 
             return "OverrideMe of Parent1";
-        } 
+        }
+
+        public virtual void OverrideMe2()
+        {
+
+            Console.WriteLine("OverrideMe2 of Parent1");
+        }
 
 
     }
@@ -128,6 +137,13 @@ namespace c_sharp_basics_lingar.polymorphism
         public override string OverrideMe(int n)
         {
             return "OverrideMe of Child1";
+        }
+
+        public override void OverrideMe2()
+        {
+
+            base.OverrideMe2();
+            Console.WriteLine("OverrideMe2 of Child");
         }
     }
 
