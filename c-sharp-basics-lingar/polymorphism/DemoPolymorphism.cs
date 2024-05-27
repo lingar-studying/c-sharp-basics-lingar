@@ -28,6 +28,7 @@ namespace c_sharp_basics_lingar.polymorphism
             //IAutomatic i3 = new Plain();// צריך המרה מפורשת
 
             //IAutomatic i4 = (IAutomatic) new Plain();// runtime error - unable to cast
+            ICartoon a8 = (ICartoon)new Character1();
 
             IAutomatic i5 = (IAutomatic) new Jumbo();//will pass compliation!! Runtime error
             //ICartoon i21 = (ICartoon)new Character1();//runtime error
