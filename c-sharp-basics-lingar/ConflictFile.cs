@@ -6,6 +6,9 @@ namespace c_sharp_basics_lingar
 {
     public class ConflictFile
     {
+        public static void Do1()
+        {
 
+        }
     }
 }
