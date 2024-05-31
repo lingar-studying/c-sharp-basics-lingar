@@ -19,8 +19,8 @@ namespace c_sharp_basics_lingar.object_basics
             Console.WriteLine("color = " + p.color + "|price = " + p.price);
             Phone p2 = new Phone();
             Console.WriteLine("color = " + p2.color + "|price = " + p2.price);
-            p.DoCount();
-            p2.DoCount();
+            p.DoDiscount();
+            p2.DoDiscount();
 
             Console.WriteLine("color = " + p.color + "|price = " + p.price);
             Console.WriteLine("color = " + p2.color + "|price = " + p2.price);
@@ -48,12 +48,12 @@ namespace c_sharp_basics_lingar.object_basics
 
         }
 
-        public Phone(double d) : this("orange", d)
+        public Phone(double d) : this("orange", 205.06)
         {
 
         }
 
-        public void DoCount()
+        public void DoDiscount()
         {
             ThisKeyword.DoDiscount(this);
         }
