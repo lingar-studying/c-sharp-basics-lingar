@@ -9,8 +9,10 @@ namespace c_sharp_basics_lingar.hospital
     public class Employee
     {
         private int num = serialNumber++;
-        private string name;
+        private string name;//= name2;
         private static int serialNumber = 1;
+
+       // private static string name2 = "aaa";
 
         public Employee(string name)
         {

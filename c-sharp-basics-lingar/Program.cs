@@ -30,6 +30,8 @@ using c_sharp_basics_lingar.general;
 using c_sharp_basics_lingar.statics_demo;
 
 using c_sharp_basics_lingar.object_basics;
+
+using c_sharp_basics_lingar.hospital;
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -59,7 +61,7 @@ namespace c_sharp_basics_lingar
             //RunMe.Main();
             //TestPickupStore.runMe();
             //TestHospital.Test1();
-            //TestHospital.Test2();
+            TestHospital.Test2();
             //AbstractDemo.DemoAbstractClass();
             //ListLearning.DemoList();
             // Driver.Main222();
@@ -128,7 +130,7 @@ namespace c_sharp_basics_lingar
             //Magen24BQ4.Demo();
             //Magen24BQ5.Demo();
             //DemoPolymorphism.Demo();
-            ExchangeDemoHomeWork.Demo();
+            //ExchangeDemoHomeWork.Demo();
 
             //ThisKeyword.Demo();
 
