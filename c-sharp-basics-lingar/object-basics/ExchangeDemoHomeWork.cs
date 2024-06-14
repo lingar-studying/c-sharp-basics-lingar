@@ -9,19 +9,33 @@ namespace c_sharp_basics_lingar.object_basics
     {
         private string name = "";
         private Stock stock = null;
+        private const int YEAR = 2020;
+
+        private readonly int YEAR2;// = 2020;
+
 
         private int amount;//כמות המניות
 
         private double balance = 100_000.00; //כמות כסף
 
+
+        //public void SetYear(int year2)
+        //{
+        //    year = year2;
+        //}
+
         public StockHolders(string name, Stock stock)
         {
             this.name = name;
             this.stock = stock;
+            YEAR2 = 2024;
+            //year = 2020;
         }
 
         public string GetName()
         {
+
+            YEAR2 = 320;
             return name;
         }
 
