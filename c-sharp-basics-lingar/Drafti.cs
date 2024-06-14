@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+//some change
 namespace c_sharp_basics_lingar
 {
     public class Drafti
