@@ -128,11 +128,11 @@ namespace c_sharp_basics_lingar
             //Magen24BQ4.Demo();
             //Magen24BQ5.Demo();
             //DemoPolymorphism.Demo();
-            //ExchangeDemoHomeWork.Demo();
+            ExchangeDemoHomeWork.Demo();
 
             //ThisKeyword.Demo();
 
-            AccessModifiers.Demo();
+            //AccessModifiers.Demo();
 
 
 

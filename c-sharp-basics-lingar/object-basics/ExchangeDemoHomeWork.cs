@@ -4,6 +4,74 @@ using System.Text;
 //HOME WORK
 namespace c_sharp_basics_lingar.object_basics
 {
+
+    public class StockHolders
+    {
+        private string name = "";
+        private Stock stock = null;
+
+        private int amount;//כמות המניות
+
+        private double balance = 100_000.00; //כמות כסף
+
+        public StockHolders(string name, Stock stock)
+        {
+            this.name = name;
+            this.stock = stock;
+        }
+
+        public string GetName()
+        {
+            return name;
+        }
+
+        public Stock GetStock()
+        {
+            return this.stock;
+        }
+
+        public void SetName(string name)
+        {
+            this.name = name;
+        }
+        public void SetStock(Stock stock)
+        {
+            this.stock = stock;
+        }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"{name} has {amount} of {stock.sign}, balance = {balance}");
+        }
+
+        public void BuyStocks(int amount)
+        {
+            //check if there is enough money
+            if(amount * stock.price > balance)
+            {
+                Console.WriteLine("You don't have enough money");
+                return;
+            }
+
+            //multiple price * amount - and substract from the balance
+            balance -= (stock.price * amount);
+
+            // add the amount to the balance
+            this.amount += amount;
+        }
+
+
+        public void SellAll()
+        {
+            //Price * amount - add to the balance 
+            balance += (stock.price * this.amount);
+
+            //Reset amount // לאפס כמות
+            this.amount = 0;
+
+        }
+    }
+
     public class ExchangeDemoHomeWork
     {
 
@@ -40,7 +108,39 @@ namespace c_sharp_basics_lingar.object_basics
             Console.WriteLine("dPrice = " + dPrice);
             //AddN(ref 2, 10);
 
+            int x = 10;
 
+            int y = x;
+
+            x = 20;
+
+            Console.WriteLine("y = " + y);
+            stock.DisplayStock();//296
+            Stock stock2 = stock;
+
+            stock.price = 360;
+
+            stock2.DisplayStock();
+
+            Console.WriteLine(stock2.Equals(stock));
+            StockHolders holder1 = new StockHolders("Avi", stock);
+            Stock coke = new Stock("coke cola", 20.05, "COKE");
+            StockHolders holder2 = new StockHolders("Moshe", coke);
+
+            holder2.DisplayDetails();
+
+            holder2.BuyStocks(7000);
+
+            holder2.DisplayDetails();
+
+            holder2.BuyStocks(100);
+
+            holder2.DisplayDetails();
+
+            coke.price = 25;
+
+            holder2.SellAll();
+            holder2.DisplayDetails();
 
         }
         //TODO - 
