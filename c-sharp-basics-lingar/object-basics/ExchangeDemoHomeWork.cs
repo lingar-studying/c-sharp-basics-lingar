@@ -35,7 +35,7 @@ namespace c_sharp_basics_lingar.object_basics
         public string GetName()
         {
 
-            YEAR2 = 320;
+            //YEAR2 = 320;
             return name;
         }
 
