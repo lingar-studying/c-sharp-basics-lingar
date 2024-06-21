@@ -32,6 +32,9 @@ using c_sharp_basics_lingar.statics_demo;
 using c_sharp_basics_lingar.object_basics;
 
 using c_sharp_basics_lingar.hospital;
+
+using c_sharp_basics_lingar.inheritance;
+
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -61,7 +64,7 @@ namespace c_sharp_basics_lingar
             //RunMe.Main();
             //TestPickupStore.runMe();
             //TestHospital.Test1();
-            TestHospital.Test2();
+            //TestHospital.Test2();
             //AbstractDemo.DemoAbstractClass();
             //ListLearning.DemoList();
             // Driver.Main222();
@@ -103,8 +106,8 @@ namespace c_sharp_basics_lingar
 
             //EqualsDemo.Demo();
             //MiddleTestQ3.Demo();
-            double d2 = 8.6;
-            int i2 = (int)d2;
+            //double d2 = 8.6;
+            //int i2 = (int)d2;
 
             //d2 = i2; Console.WriteLine("d2 = " + d2);
             //PointerDemo.Demo();
@@ -134,7 +137,9 @@ namespace c_sharp_basics_lingar
             //ThisKeyword.Demo();
 
             //AccessModifiers.Demo();
-            ExchangeDemoHomeWork.Demo();
+            //ExchangeDemoHomeWork.Demo();
+
+            TestInheritance.Test1();
 
 
 
