@@ -7,6 +7,8 @@ namespace c_sharp_basics_lingar.object_basics
 
     public class StockHolders
     {
+
+        public static int staticInt = 9;
         private string name = "";
         private Stock stock = null;
         private const int YEAR = 2020;
@@ -24,6 +26,18 @@ namespace c_sharp_basics_lingar.object_basics
         //    year = year2;
         //}
 
+
+        public void GetStatic()
+        {
+            Console.WriteLine("static field = " + staticInt);
+        }
+
+        public void SetStatic(int x)
+        {
+
+            staticInt = x;
+            //Console.WriteLine("static field = " + staticInt);
+        }
         public StockHolders(string name, Stock stock)
         {
             this.name = name;
@@ -155,6 +169,11 @@ namespace c_sharp_basics_lingar.object_basics
 
             holder2.SellAll();
             holder2.DisplayDetails();
+
+            holder1.GetStatic();
+            holder2.SetStatic(100);
+            holder1.GetStatic();
+
 
         }
         //TODO - 
