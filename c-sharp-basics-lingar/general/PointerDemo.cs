@@ -35,6 +35,22 @@ namespace c_sharp_basics_lingar.general
 
             Console.WriteLine("str = " + str);
 
+            //checing change the source
+
+            a = new SomeA();
+            a.x = 200;
+            Console.WriteLine("a.x = " + a.x);
+            
+            Console.WriteLine("b.x = " + b.x);
+
+            SomeA c = new SomeA();
+
+            SomeA d = c;
+
+            c = a;
+            Console.WriteLine("c.x = " + c.x);
+
+            Console.WriteLine("d.x = " + d.x);
 
         }
 

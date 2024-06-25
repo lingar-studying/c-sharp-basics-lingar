@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="data-structures\mahat-data-structures\" />
     <Folder Include="test-solution\summer-22-A\NewFolder\" />
   </ItemGroup>
 
