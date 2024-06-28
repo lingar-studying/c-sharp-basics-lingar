@@ -9,6 +9,12 @@ namespace c_sharp_basics_lingar.polymorphism
         public static void DemoCastingAndConstructors()
         {
 
+            double d = 2.5;
+            //int x = d;//imlicity not working
+            int x = (int)d;//explicity  - המרה מפורשת
+
+            double d2 = x;//implicity is working
+
             //זכור שהבנאים של כיתת ההורה נקראים מעצמם או מפורש כשיוצרים את התולדה.
             Parent1 p1 = new Parent1();//print Parent1 constructor
 
@@ -37,7 +43,14 @@ namespace c_sharp_basics_lingar.polymorphism
             //כמו פה - כי האובייקט הנתון בתור ערך הוא לא מסוג
             //Child2
             //run time exception
-            //Child2 c5 = (Child2)mixed1;
+            //Child2 c5 = (Child2)mixed1;//unsafe
+
+            if(mixed1 is Child2)
+            {
+                Child2 c5 = (Child2)mixed1;
+            }
+
+
 
             //what is the value ? 
             c4.Child1Function();

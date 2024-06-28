@@ -60,11 +60,11 @@ namespace c_sharp_basics_lingar.inheritance
                 p.MaximumStrengh();
                 Console.WriteLine(p);
                 Console.WriteLine("loop");
-                //if(p is Hero)
-                //{
-                //    p.DoHero();
+                if (p is Hero)
+                {
+                    ((Hero)p).DoHero();
 
-                //}
+                }
             }
 
             //allObjectTogether[1].DoHero();
@@ -86,7 +86,7 @@ namespace c_sharp_basics_lingar.inheritance
             DemoPoly(hero2);
 
 
-
+            //Hero hero234 = (Hero)new PersonBase("David");
 
             //Console.WriteLine(regularPerson.name);
             //Console.WriteLine(regularPerson.strengh);

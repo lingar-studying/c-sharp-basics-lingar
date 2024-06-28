@@ -70,7 +70,9 @@ namespace c_sharp_basics_lingar.inheritance
             return base.ToString() + $", specialization = {specialization}";
         }
 
-        public void DoHero() { }
+        public void DoHero() {
+            Console.WriteLine("Do hero");
+        }
 
 
         /*public override string OverrideMe()//won't working*/

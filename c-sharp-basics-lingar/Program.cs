@@ -126,7 +126,7 @@ namespace c_sharp_basics_lingar
 
             //MagenSpringA24Q9_11.Demo();
             //SomeDataStructuresProblems.Demo();
-            //OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
+            OverridingOverloadingCastingDemoImprotant.DemoCastingAndConstructors();
             //SimpleQuestionsSpring22A.Demo();
             //EulerProblem47.Demo();
             //Magen24BQ3.Demo();
@@ -139,9 +139,9 @@ namespace c_sharp_basics_lingar
             //AccessModifiers.Demo();
             //ExchangeDemoHomeWork.Demo();
 
-            //TestInheritance.Test1();
+            TestInheritance.Test1();
 
-            Pen.DemoProps();
+            //Pen.DemoProps();
 
 
 
