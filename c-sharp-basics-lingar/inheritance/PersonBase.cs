@@ -30,6 +30,28 @@ namespace c_sharp_basics_lingar.inheritance
             return $"Person, Strengh = {strengh}, name = {name}";
         }
 
+        public void Walk()
+        {
+            Console.WriteLine("Walking");
+        }
+        public void Walk(int meters)
+        {
+            Console.WriteLine("Walking " + meters  + " meters");
+        }
+
+        public string Walk(int meters, double cm)
+        {
+            return "Walking " + meters + " meters" + cm + "cm";
+        }
+
+
+        //public char Walk(int meters, double cm) { return 'a'; }
+        public virtual void OverrideMe()
+        {
+
+        }
+
+
     }
 
     public class Hero : PersonBase
@@ -49,6 +71,21 @@ namespace c_sharp_basics_lingar.inheritance
         }
 
         public void DoHero() { }
+
+
+        /*public override string OverrideMe()//won't working*/
+
+        public override void OverrideMe()
+        {
+            
+        }
+
+        public string Walk(int meters, double cm, char c)
+        {
+            this.Walk(30);
+            return "Walking " + meters + " meters" + cm + "cm";
+        }
+
     }
 
     public class SuperHero : Hero
