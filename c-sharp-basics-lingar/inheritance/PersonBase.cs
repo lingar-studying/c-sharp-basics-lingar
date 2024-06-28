@@ -57,7 +57,7 @@ namespace c_sharp_basics_lingar.inheritance
         {
 
         }
-        public override void MaximumStrengh()
+        public new void MaximumStrengh()
         {
             this.strengh = 1000;
         }
@@ -95,7 +95,7 @@ namespace c_sharp_basics_lingar.inheritance
             return " some ball in color " + color;
 
         }
-        public override bool Equals(object obj)
+        public bool Equals(object obj)
         {
             //if(obj.color.Equals())
             return base.Equals(obj);

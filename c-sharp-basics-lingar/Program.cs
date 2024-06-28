@@ -110,7 +110,7 @@ namespace c_sharp_basics_lingar
             //int i2 = (int)d2;
 
             //d2 = i2; Console.WriteLine("d2 = " + d2);
-            PointerDemo.Demo();
+            //PointerDemo.Demo();
             //ComplexityDemo.Demo();
             //Summer22AQ3.Test();
 
@@ -139,13 +139,7 @@ namespace c_sharp_basics_lingar
             //AccessModifiers.Demo();
             //ExchangeDemoHomeWork.Demo();
 
-            //TestInheritance.Test1();
-
-
-
-
-
-
+            TestInheritance.Test1();
 
 
         }
