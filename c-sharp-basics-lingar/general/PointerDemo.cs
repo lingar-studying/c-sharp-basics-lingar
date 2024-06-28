@@ -48,12 +48,37 @@ namespace c_sharp_basics_lingar.general
             SomeA d = c;
 
             c = a;
+
+            a.x = 500;
             Console.WriteLine("c.x = " + c.x);
 
             Console.WriteLine("d.x = " + d.x);
 
+            DontChangeSomeObject(d);
+
+            Console.WriteLine("After trying to change: " + d.x);
+
+            DoesChangeSomeObject(ref d);
+
+            Console.WriteLine("After trying to change again: " + d.x);
+
+
         }
 
+        public static void DontChangeSomeObject(SomeA a)
+        {
+            a = new SomeA();
+            a.x = 1000;
+            Console.WriteLine($"inside the method = {a.x}");
+        }
+
+
+        public static void DoesChangeSomeObject(ref SomeA a)
+        {
+            a = new SomeA();
+            a.x = 1000;
+            Console.WriteLine($"inside the method = {a.x}");
+        }
         public static void ChangeX(int x)
         {
 
