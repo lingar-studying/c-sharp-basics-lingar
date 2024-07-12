@@ -139,10 +139,10 @@ namespace c_sharp_basics_lingar
             //AccessModifiers.Demo();
             //ExchangeDemoHomeWork.Demo();
 
-            //TestInheritance.Test1();
+            TestInheritance.Test1();
 
             //Pen.DemoProps();
-            DemoEnum.Demo();
+           // DemoEnum.Demo();
 
 
 

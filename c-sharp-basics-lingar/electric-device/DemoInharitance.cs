@@ -69,6 +69,7 @@ namespace c_sharp_basics_lingar.inheritance
             Console.WriteLine(string.Join("*", list1));
 
             Console.WriteLine(list1[1]);
+            Console.WriteLine("size = " + list1.Count);
 
 
 
