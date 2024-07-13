@@ -91,6 +91,8 @@ namespace c_sharp_basics_lingar.inheritance
             //Console.WriteLine(regularPerson.name);
             //Console.WriteLine(regularPerson.strengh);
 
+            DemoInharitance.demo();
+
         }
         public static void DemoPoly(PersonBase p)
         {

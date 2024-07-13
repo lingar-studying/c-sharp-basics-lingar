@@ -144,6 +144,7 @@ namespace c_sharp_basics_lingar
             //TestInheritance.Test1();
 
             //Pen.DemoProps();
+           // DemoEnum.Demo();
 
             DataStructureDemo.Demo();
 
