@@ -35,6 +35,8 @@ using c_sharp_basics_lingar.hospital;
 
 using c_sharp_basics_lingar.inheritance;
 
+using c_sharp_basics_lingar.data_structures;
+
 namespace c_sharp_basics_lingar
 {
     public class Program
@@ -120,7 +122,7 @@ namespace c_sharp_basics_lingar
             //PrototypePatternDemo.Demo();
             //BuilderPattern.Demo();
             // ObjectPoolPattern.Demo();
-            // RecursionDemo.Demo();
+            RecursionDemo.Demo();
 
             //Summer22ASolutions.Demo();
 
@@ -139,11 +141,11 @@ namespace c_sharp_basics_lingar
             //AccessModifiers.Demo();
             //ExchangeDemoHomeWork.Demo();
 
-            TestInheritance.Test1();
+            //TestInheritance.Test1();
 
             //Pen.DemoProps();
 
-
+            DataStructureDemo.Demo();
 
         }
     }
