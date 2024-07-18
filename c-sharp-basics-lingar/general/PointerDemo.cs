@@ -52,6 +52,8 @@ namespace c_sharp_basics_lingar.general
 
             Console.WriteLine("d.x = " + d.x);
 
+            a = c = new SomeA();//assign to both.... 
+
         }
 
         public static void ChangeX(int x)

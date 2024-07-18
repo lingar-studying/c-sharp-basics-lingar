@@ -8,7 +8,7 @@ namespace c_sharp_basics_lingar.data_structures.tests.summer_22_a_data_structure
     {
         public static void Demo()
         {
-            SummerA22_DataStrctures_Q1.Demo();
+            SummerA22_DataStrctures_Q2.Demo();
 
             int[] q2WrongTestTrue = { 10, 20, 40, 100 };
             int[] q2WrongTestFalse = { 10, 20, 80, 100 };
@@ -79,7 +79,7 @@ namespace c_sharp_basics_lingar.data_structures.tests.summer_22_a_data_structure
         }
 
     }
-    public class SummerA22_DataStrctures_Q1
+    public class SummerA22_DataStrctures_Q2
     {
         public static void Demo()
         {
