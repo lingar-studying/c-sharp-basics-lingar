@@ -149,7 +149,8 @@ namespace c_sharp_basics_lingar
 
             // DataStructureDemo.Demo();
 
-            MethodsBasicsDemo.Demo();
+            //MethodsBasicsDemo.Demo();
+            ObjectBasicsDemo.BoxerDemo();
 
         }
     }
