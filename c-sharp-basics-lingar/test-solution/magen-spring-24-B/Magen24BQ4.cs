@@ -32,14 +32,14 @@ namespace c_sharp_basics_lingar.test_solution.magen_spring_24_B
             //v4.Move();
 
 
-            //Console.WriteLine(v2.BusDoorsOpen());
+           // Console.WriteLine(v2.BusDoorsOpen());
 
             //Console.WriteLine(((Rail)v2).RailDoorsOpen());
 
 
-            //Console.WriteLine(((Bus)v2).BusDoorsOpen());
+            Console.WriteLine(((Bus)v2).BusDoorsOpen());
 
-            Console.WriteLine(v3 is Bus);
+           // Console.WriteLine(v3 is Bus);
 
         }
     }
