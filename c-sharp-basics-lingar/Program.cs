@@ -133,7 +133,7 @@ namespace c_sharp_basics_lingar
             //SimpleQuestionsSpring22A.Demo();
             //EulerProblem47.Demo();
             //Magen24BQ3.Demo();
-            Magen24BQ4.Demo();
+            //Magen24BQ4.Demo();
             //Magen24BQ5.Demo();
             //DemoPolymorphism.Demo();
 
@@ -152,6 +152,7 @@ namespace c_sharp_basics_lingar
             //MethodsBasicsDemo.Demo();
             //ObjectBasicsDemo.BoxerDemo();
             //AlgoUtils.Demo();
+            RuntimeExceptions.GenerateError();
         }
     }
 }
