@@ -37,6 +37,7 @@ using c_sharp_basics_lingar.inheritance;
 
 using c_sharp_basics_lingar.data_structures;
 using c_sharp_basics_lingar.design_pattern;
+using c_sharp_basics_lingar.test_solution.sping_23_A;
 
 namespace c_sharp_basics_lingar
 {
@@ -151,8 +152,10 @@ namespace c_sharp_basics_lingar
 
             //MethodsBasicsDemo.Demo();
             //ObjectBasicsDemo.BoxerDemo();
-            //AlgoUtils.Demo();
-            RuntimeExceptions.GenerateError();
+            // AlgoUtils.Demo();
+            //RuntimeExceptions.GenerateError();
+            Spring23ASolutions.Main2();
+
         }
     }
 }
