@@ -154,7 +154,8 @@ namespace c_sharp_basics_lingar
             //ObjectBasicsDemo.BoxerDemo();
             // AlgoUtils.Demo();
             //RuntimeExceptions.GenerateError();
-            Spring23ASolutions.Main2();
+            //Spring23ASolutions.Main2();
+            ICompareableDemo.Demo();
 
         }
     }

@@ -50,7 +50,7 @@ namespace c_sharp_basics_lingar.object_basics
 
         public override string ToString()
         {
-            return $"Pen: [color = {color}, length = {length}]";
+            return $"Pen: [color = {color}, length = {length}, price = {price}]";
         }
 
         public static void DemoProps()
