@@ -1,11 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace c_sharp_basics_lingar.object_basics
 {
-    public class Pen
+    public class Pen : IComparable
     {
+
+        public int CompareTo(object obj)
+        {
+
+            //null at the end
+            if (obj == null)
+            {
+                return 1;
+            }
+            Pen pen = (Pen)obj;
+            if (price > pen.price)
+            {
+                return 1;
+            }
+            else if (price < pen.price)
+            {
+                return -1;
+            }
+            return 0;
+        }
 
         //NOT to use in Mahat test!
         private string color;
@@ -69,5 +90,6 @@ namespace c_sharp_basics_lingar.object_basics
             Console.WriteLine(p.Name);
         }
 
+        
     }
 }
