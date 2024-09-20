@@ -1,4 +1,5 @@
-﻿using System;
+﻿using c_sharp_basics_lingar.object_basics;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,6 +9,19 @@ namespace c_sharp_basics_lingar.design_pattern
     {
         public static void Demo()
         {
+
+
+            ParkerBuilder parkerBuilder = new ParkerBuilder("blue");
+            Pen parker = parkerBuilder.Build();
+            Console.WriteLine("Parker = " + parker);
+
+            PilotBuilder pilotBuilder = new PilotBuilder("black");
+            Pen pilot = pilotBuilder.Build();
+            Console.WriteLine("pilot = " + pilot);
+
+
+            Console.WriteLine("*********************");
+
             // The client code creates a builder object, passes it to the
             // director and then initiates the construction process. The end
             // result is retrieved from the builder object.
