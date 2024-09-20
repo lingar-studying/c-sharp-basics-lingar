@@ -122,7 +122,7 @@ namespace c_sharp_basics_lingar
             //Spring22AQ4.Demo();
 
             //PrototypePatternDemo.Demo();
-            BuilderPattern.Demo();
+            //BuilderPattern.Demo();
             // ObjectPoolPattern.Demo();
             //RecursionDemo.Demo();
 
@@ -155,7 +155,8 @@ namespace c_sharp_basics_lingar
             // AlgoUtils.Demo();
             //RuntimeExceptions.GenerateError();
             //Spring23ASolutions.Main2();
-            ICompareableDemo.Demo();
+            //ICompareableDemo.Demo();
+            ExceptionsDemo.Demo();
 
         }
     }
