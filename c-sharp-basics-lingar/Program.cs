@@ -155,6 +155,7 @@ namespace c_sharp_basics_lingar
             // AlgoUtils.Demo();
             //RuntimeExceptions.GenerateError();
             //Spring23ASolutions.Main2();
+            Spring23ASolutions.Demo();
             //ICompareableDemo.Demo();
             ExceptionsDemo.Demo();
 
